@@ -10,4 +10,6 @@
 
 @implementation PEBApplication (PEBCore)
 
+@dynamic core;
+
 @end

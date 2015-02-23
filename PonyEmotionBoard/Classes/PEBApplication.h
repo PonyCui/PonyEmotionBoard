@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface PEBApplication : NSObject
 
 + (PEBApplication *)sharedInstance;
+
+- (void)setEditing:(BOOL)isEditing forTextField:(UITextField *)textField;
 
 @end

@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "PEBApplication.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
@@ -22,6 +25,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)handleEmotionButtonTapped:(id)sender {
+    [[PEBApplication sharedInstance] setEditing:YES forTextField:self.textField];
 }
 
 @end

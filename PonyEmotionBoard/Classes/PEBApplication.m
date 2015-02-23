@@ -8,6 +8,7 @@
 
 #import "PEBApplication.h"
 #import "PEBCore.h"
+#import "PEBWireframe.h"
 
 @interface PEBApplication ()
 
@@ -37,6 +38,17 @@
         self.core = [[PEBCore alloc] init];
     }
     return self;
+}
+
+- (void)setEditing:(BOOL)isEditing forTextField:(UITextField *)textField {
+    id textFieldViewController = [textField nextResponder];
+    do {
+        textFieldViewController = [textFieldViewController nextResponder];
+    } while (![textFieldViewController isKindOfClass:[UIViewController class]]);
+    if (isEditing) {
+        [self.core.wireframe presentEmotionBoardToViewController:textFieldViewController
+                                                    forTextField:textField];
+    }
 }
 
 @end

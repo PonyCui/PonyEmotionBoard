@@ -21,6 +21,7 @@
 		F0EDFBED1A9AC50E005FCB07 /* PEBImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0EDFBEC1A9AC50E005FCB07 /* PEBImages.xcassets */; };
 		F0EDFBF01A9AC529005FCB07 /* PEBWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBEF1A9AC529005FCB07 /* PEBWireframe.m */; };
 		F0EDFBF41A9AC598005FCB07 /* PEBApplication+PEBCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBF31A9AC598005FCB07 /* PEBApplication+PEBCore.m */; };
+		F0EDFBF71A9AD3B9005FCB07 /* PEBKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBF61A9AD3B9005FCB07 /* PEBKeyboardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		F0EDFBEF1A9AC529005FCB07 /* PEBWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBWireframe.m; sourceTree = "<group>"; };
 		F0EDFBF21A9AC598005FCB07 /* PEBApplication+PEBCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PEBApplication+PEBCore.h"; sourceTree = "<group>"; };
 		F0EDFBF31A9AC598005FCB07 /* PEBApplication+PEBCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PEBApplication+PEBCore.m"; sourceTree = "<group>"; };
+		F0EDFBF51A9AD3B9005FCB07 /* PEBKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBKeyboardViewController.h; sourceTree = "<group>"; };
+		F0EDFBF61A9AD3B9005FCB07 /* PEBKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBKeyboardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +218,8 @@
 		F0EDFBE71A9AC498005FCB07 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F0EDFBF51A9AD3B9005FCB07 /* PEBKeyboardViewController.h */,
+				F0EDFBF61A9AD3B9005FCB07 /* PEBKeyboardViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				F0EDFBB61A9ABD4D005FCB07 /* AppDelegate.m in Sources */,
 				F0EDFBDE1A9AC312005FCB07 /* PEBApplication.m in Sources */,
 				F0EDFBB31A9ABD4D005FCB07 /* main.m in Sources */,
+				F0EDFBF71A9AD3B9005FCB07 /* PEBKeyboardViewController.m in Sources */,
 				F0EDFBE41A9AC35B005FCB07 /* PEBDefines.m in Sources */,
 				F0EDFBE11A9AC345005FCB07 /* PEBCore.m in Sources */,
 			);
