@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F0EDFBB31A9ABD4D005FCB07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBB21A9ABD4D005FCB07 /* main.m */; };
+		F0EDFBB61A9ABD4D005FCB07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBB51A9ABD4D005FCB07 /* AppDelegate.m */; };
+		F0EDFBB91A9ABD4D005FCB07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBB81A9ABD4D005FCB07 /* ViewController.m */; };
+		F0EDFBBC1A9ABD4D005FCB07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EDFBBA1A9ABD4D005FCB07 /* Main.storyboard */; };
+		F0EDFBBE1A9ABD4D005FCB07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0EDFBBD1A9ABD4D005FCB07 /* Images.xcassets */; };
+		F0EDFBC11A9ABD4D005FCB07 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EDFBBF1A9ABD4D005FCB07 /* LaunchScreen.xib */; };
+		F0EDFBCD1A9ABD4D005FCB07 /* PonyEmotionBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBCC1A9ABD4D005FCB07 /* PonyEmotionBoardTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F0EDFBC71A9ABD4D005FCB07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0EDFBA51A9ABD4D005FCB07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0EDFBAC1A9ABD4D005FCB07;
+			remoteInfo = PonyEmotionBoard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F0EDFBAD1A9ABD4D005FCB07 /* PonyEmotionBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PonyEmotionBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0EDFBB11A9ABD4D005FCB07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0EDFBB21A9ABD4D005FCB07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F0EDFBB41A9ABD4D005FCB07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F0EDFBB51A9ABD4D005FCB07 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F0EDFBB71A9ABD4D005FCB07 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F0EDFBB81A9ABD4D005FCB07 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F0EDFBBB1A9ABD4D005FCB07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F0EDFBBD1A9ABD4D005FCB07 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F0EDFBC01A9ABD4D005FCB07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F0EDFBC61A9ABD4D005FCB07 /* PonyEmotionBoardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PonyEmotionBoardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0EDFBCB1A9ABD4D005FCB07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0EDFBCC1A9ABD4D005FCB07 /* PonyEmotionBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PonyEmotionBoardTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0EDFBAA1A9ABD4D005FCB07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0EDFBC31A9ABD4D005FCB07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F0EDFBA41A9ABD4C005FCB07 = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBAF1A9ABD4D005FCB07 /* PonyEmotionBoard */,
+				F0EDFBC91A9ABD4D005FCB07 /* PonyEmotionBoardTests */,
+				F0EDFBAE1A9ABD4D005FCB07 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0EDFBAE1A9ABD4D005FCB07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBAD1A9ABD4D005FCB07 /* PonyEmotionBoard.app */,
+				F0EDFBC61A9ABD4D005FCB07 /* PonyEmotionBoardTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0EDFBAF1A9ABD4D005FCB07 /* PonyEmotionBoard */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBB41A9ABD4D005FCB07 /* AppDelegate.h */,
+				F0EDFBB51A9ABD4D005FCB07 /* AppDelegate.m */,
+				F0EDFBB71A9ABD4D005FCB07 /* ViewController.h */,
+				F0EDFBB81A9ABD4D005FCB07 /* ViewController.m */,
+				F0EDFBBA1A9ABD4D005FCB07 /* Main.storyboard */,
+				F0EDFBBD1A9ABD4D005FCB07 /* Images.xcassets */,
+				F0EDFBBF1A9ABD4D005FCB07 /* LaunchScreen.xib */,
+				F0EDFBB01A9ABD4D005FCB07 /* Supporting Files */,
+			);
+			path = PonyEmotionBoard;
+			sourceTree = "<group>";
+		};
+		F0EDFBB01A9ABD4D005FCB07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBB11A9ABD4D005FCB07 /* Info.plist */,
+				F0EDFBB21A9ABD4D005FCB07 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0EDFBC91A9ABD4D005FCB07 /* PonyEmotionBoardTests */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBCC1A9ABD4D005FCB07 /* PonyEmotionBoardTests.m */,
+				F0EDFBCA1A9ABD4D005FCB07 /* Supporting Files */,
+			);
+			path = PonyEmotionBoardTests;
+			sourceTree = "<group>";
+		};
+		F0EDFBCA1A9ABD4D005FCB07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBCB1A9ABD4D005FCB07 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0EDFBAC1A9ABD4D005FCB07 /* PonyEmotionBoard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0EDFBD01A9ABD4D005FCB07 /* Build configuration list for PBXNativeTarget "PonyEmotionBoard" */;
+			buildPhases = (
+				F0EDFBA91A9ABD4D005FCB07 /* Sources */,
+				F0EDFBAA1A9ABD4D005FCB07 /* Frameworks */,
+				F0EDFBAB1A9ABD4D005FCB07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PonyEmotionBoard;
+			productName = PonyEmotionBoard;
+			productReference = F0EDFBAD1A9ABD4D005FCB07 /* PonyEmotionBoard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F0EDFBC51A9ABD4D005FCB07 /* PonyEmotionBoardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0EDFBD31A9ABD4D005FCB07 /* Build configuration list for PBXNativeTarget "PonyEmotionBoardTests" */;
+			buildPhases = (
+				F0EDFBC21A9ABD4D005FCB07 /* Sources */,
+				F0EDFBC31A9ABD4D005FCB07 /* Frameworks */,
+				F0EDFBC41A9ABD4D005FCB07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0EDFBC81A9ABD4D005FCB07 /* PBXTargetDependency */,
+			);
+			name = PonyEmotionBoardTests;
+			productName = PonyEmotionBoardTests;
+			productReference = F0EDFBC61A9ABD4D005FCB07 /* PonyEmotionBoardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0EDFBA51A9ABD4D005FCB07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "崔 明辉";
+				TargetAttributes = {
+					F0EDFBAC1A9ABD4D005FCB07 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					F0EDFBC51A9ABD4D005FCB07 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = F0EDFBAC1A9ABD4D005FCB07;
+					};
+				};
+			};
+			buildConfigurationList = F0EDFBA81A9ABD4D005FCB07 /* Build configuration list for PBXProject "PonyEmotionBoard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0EDFBA41A9ABD4C005FCB07;
+			productRefGroup = F0EDFBAE1A9ABD4D005FCB07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0EDFBAC1A9ABD4D005FCB07 /* PonyEmotionBoard */,
+				F0EDFBC51A9ABD4D005FCB07 /* PonyEmotionBoardTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0EDFBAB1A9ABD4D005FCB07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0EDFBBC1A9ABD4D005FCB07 /* Main.storyboard in Resources */,
+				F0EDFBC11A9ABD4D005FCB07 /* LaunchScreen.xib in Resources */,
+				F0EDFBBE1A9ABD4D005FCB07 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0EDFBC41A9ABD4D005FCB07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0EDFBA91A9ABD4D005FCB07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0EDFBB91A9ABD4D005FCB07 /* ViewController.m in Sources */,
+				F0EDFBB61A9ABD4D005FCB07 /* AppDelegate.m in Sources */,
+				F0EDFBB31A9ABD4D005FCB07 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0EDFBC21A9ABD4D005FCB07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0EDFBCD1A9ABD4D005FCB07 /* PonyEmotionBoardTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F0EDFBC81A9ABD4D005FCB07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0EDFBAC1A9ABD4D005FCB07 /* PonyEmotionBoard */;
+			targetProxy = F0EDFBC71A9ABD4D005FCB07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F0EDFBBA1A9ABD4D005FCB07 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0EDFBBB1A9ABD4D005FCB07 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F0EDFBBF1A9ABD4D005FCB07 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0EDFBC01A9ABD4D005FCB07 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F0EDFBCE1A9ABD4D005FCB07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0EDFBCF1A9ABD4D005FCB07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0EDFBD11A9ABD4D005FCB07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PonyEmotionBoard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F0EDFBD21A9ABD4D005FCB07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PonyEmotionBoard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F0EDFBD41A9ABD4D005FCB07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PonyEmotionBoardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PonyEmotionBoard.app/PonyEmotionBoard";
+			};
+			name = Debug;
+		};
+		F0EDFBD51A9ABD4D005FCB07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PonyEmotionBoardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PonyEmotionBoard.app/PonyEmotionBoard";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0EDFBA81A9ABD4D005FCB07 /* Build configuration list for PBXProject "PonyEmotionBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0EDFBCE1A9ABD4D005FCB07 /* Debug */,
+				F0EDFBCF1A9ABD4D005FCB07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0EDFBD01A9ABD4D005FCB07 /* Build configuration list for PBXNativeTarget "PonyEmotionBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0EDFBD11A9ABD4D005FCB07 /* Debug */,
+				F0EDFBD21A9ABD4D005FCB07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F0EDFBD31A9ABD4D005FCB07 /* Build configuration list for PBXNativeTarget "PonyEmotionBoardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0EDFBD41A9ABD4D005FCB07 /* Debug */,
+				F0EDFBD51A9ABD4D005FCB07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F0EDFBA51A9ABD4D005FCB07 /* Project object */;
+}
