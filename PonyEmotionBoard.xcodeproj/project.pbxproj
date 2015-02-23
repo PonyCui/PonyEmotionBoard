@@ -14,6 +14,13 @@
 		F0EDFBBE1A9ABD4D005FCB07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0EDFBBD1A9ABD4D005FCB07 /* Images.xcassets */; };
 		F0EDFBC11A9ABD4D005FCB07 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EDFBBF1A9ABD4D005FCB07 /* LaunchScreen.xib */; };
 		F0EDFBCD1A9ABD4D005FCB07 /* PonyEmotionBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBCC1A9ABD4D005FCB07 /* PonyEmotionBoardTests.m */; };
+		F0EDFBDE1A9AC312005FCB07 /* PEBApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBDD1A9AC312005FCB07 /* PEBApplication.m */; };
+		F0EDFBE11A9AC345005FCB07 /* PEBCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBE01A9AC345005FCB07 /* PEBCore.m */; };
+		F0EDFBE41A9AC35B005FCB07 /* PEBDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBE31A9AC35B005FCB07 /* PEBDefines.m */; };
+		F0EDFBEB1A9AC4FC005FCB07 /* PEBStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EDFBEA1A9AC4FC005FCB07 /* PEBStoryBoard.storyboard */; };
+		F0EDFBED1A9AC50E005FCB07 /* PEBImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0EDFBEC1A9AC50E005FCB07 /* PEBImages.xcassets */; };
+		F0EDFBF01A9AC529005FCB07 /* PEBWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBEF1A9AC529005FCB07 /* PEBWireframe.m */; };
+		F0EDFBF41A9AC598005FCB07 /* PEBApplication+PEBCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBF31A9AC598005FCB07 /* PEBApplication+PEBCore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,18 @@
 		F0EDFBC61A9ABD4D005FCB07 /* PonyEmotionBoardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PonyEmotionBoardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EDFBCB1A9ABD4D005FCB07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0EDFBCC1A9ABD4D005FCB07 /* PonyEmotionBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PonyEmotionBoardTests.m; sourceTree = "<group>"; };
+		F0EDFBDC1A9AC312005FCB07 /* PEBApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBApplication.h; sourceTree = "<group>"; };
+		F0EDFBDD1A9AC312005FCB07 /* PEBApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBApplication.m; sourceTree = "<group>"; };
+		F0EDFBDF1A9AC345005FCB07 /* PEBCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBCore.h; sourceTree = "<group>"; };
+		F0EDFBE01A9AC345005FCB07 /* PEBCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBCore.m; sourceTree = "<group>"; };
+		F0EDFBE21A9AC35B005FCB07 /* PEBDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBDefines.h; sourceTree = "<group>"; };
+		F0EDFBE31A9AC35B005FCB07 /* PEBDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBDefines.m; sourceTree = "<group>"; };
+		F0EDFBEA1A9AC4FC005FCB07 /* PEBStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PEBStoryBoard.storyboard; sourceTree = "<group>"; };
+		F0EDFBEC1A9AC50E005FCB07 /* PEBImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PEBImages.xcassets; sourceTree = "<group>"; };
+		F0EDFBEE1A9AC529005FCB07 /* PEBWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBWireframe.h; sourceTree = "<group>"; };
+		F0EDFBEF1A9AC529005FCB07 /* PEBWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBWireframe.m; sourceTree = "<group>"; };
+		F0EDFBF21A9AC598005FCB07 /* PEBApplication+PEBCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PEBApplication+PEBCore.h"; sourceTree = "<group>"; };
+		F0EDFBF31A9AC598005FCB07 /* PEBApplication+PEBCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PEBApplication+PEBCore.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +100,8 @@
 		F0EDFBAF1A9ABD4D005FCB07 /* PonyEmotionBoard */ = {
 			isa = PBXGroup;
 			children = (
+				F0EDFBE91A9AC4DD005FCB07 /* Resources */,
+				F0EDFBD61A9AC2F0005FCB07 /* Classes */,
 				F0EDFBB41A9ABD4D005FCB07 /* AppDelegate.h */,
 				F0EDFBB51A9ABD4D005FCB07 /* AppDelegate.m */,
 				F0EDFBB71A9ABD4D005FCB07 /* ViewController.h */,
@@ -117,6 +138,112 @@
 				F0EDFBCB1A9ABD4D005FCB07 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0EDFBD61A9AC2F0005FCB07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBD71A9AC2F0005FCB07 /* Application */,
+				F0EDFBDB1A9AC2F0005FCB07 /* Common */,
+				F0EDFBDC1A9AC312005FCB07 /* PEBApplication.h */,
+				F0EDFBDD1A9AC312005FCB07 /* PEBApplication.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F0EDFBD71A9AC2F0005FCB07 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBD81A9AC2F0005FCB07 /* Application Interface */,
+				F0EDFBD91A9AC2F0005FCB07 /* Application Logic */,
+				F0EDFBDA1A9AC2F0005FCB07 /* User Interface */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F0EDFBD81A9AC2F0005FCB07 /* Application Interface */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBDF1A9AC345005FCB07 /* PEBCore.h */,
+				F0EDFBE01A9AC345005FCB07 /* PEBCore.m */,
+				F0EDFBE21A9AC35B005FCB07 /* PEBDefines.h */,
+				F0EDFBE31A9AC35B005FCB07 /* PEBDefines.m */,
+			);
+			path = "Application Interface";
+			sourceTree = "<group>";
+		};
+		F0EDFBD91A9AC2F0005FCB07 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		F0EDFBDA1A9AC2F0005FCB07 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBE51A9AC498005FCB07 /* Interactor */,
+				F0EDFBE61A9AC498005FCB07 /* Presenter */,
+				F0EDFBE71A9AC498005FCB07 /* View */,
+				F0EDFBE81A9AC498005FCB07 /* Wireframe */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		F0EDFBDB1A9AC2F0005FCB07 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBF11A9AC584005FCB07 /* Categories */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F0EDFBE51A9AC498005FCB07 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F0EDFBE61A9AC498005FCB07 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F0EDFBE71A9AC498005FCB07 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0EDFBE81A9AC498005FCB07 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBEE1A9AC529005FCB07 /* PEBWireframe.h */,
+				F0EDFBEF1A9AC529005FCB07 /* PEBWireframe.m */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		F0EDFBE91A9AC4DD005FCB07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBEA1A9AC4FC005FCB07 /* PEBStoryBoard.storyboard */,
+				F0EDFBEC1A9AC50E005FCB07 /* PEBImages.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F0EDFBF11A9AC584005FCB07 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBF21A9AC598005FCB07 /* PEBApplication+PEBCore.h */,
+				F0EDFBF31A9AC598005FCB07 /* PEBApplication+PEBCore.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +290,7 @@
 		F0EDFBA51A9ABD4D005FCB07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = PEB;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "崔 明辉";
 				TargetAttributes = {
@@ -202,6 +330,8 @@
 				F0EDFBBC1A9ABD4D005FCB07 /* Main.storyboard in Resources */,
 				F0EDFBC11A9ABD4D005FCB07 /* LaunchScreen.xib in Resources */,
 				F0EDFBBE1A9ABD4D005FCB07 /* Images.xcassets in Resources */,
+				F0EDFBEB1A9AC4FC005FCB07 /* PEBStoryBoard.storyboard in Resources */,
+				F0EDFBED1A9AC50E005FCB07 /* PEBImages.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +350,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0EDFBB91A9ABD4D005FCB07 /* ViewController.m in Sources */,
+				F0EDFBF41A9AC598005FCB07 /* PEBApplication+PEBCore.m in Sources */,
+				F0EDFBF01A9AC529005FCB07 /* PEBWireframe.m in Sources */,
 				F0EDFBB61A9ABD4D005FCB07 /* AppDelegate.m in Sources */,
+				F0EDFBDE1A9AC312005FCB07 /* PEBApplication.m in Sources */,
 				F0EDFBB31A9ABD4D005FCB07 /* main.m in Sources */,
+				F0EDFBE41A9AC35B005FCB07 /* PEBDefines.m in Sources */,
+				F0EDFBE11A9AC345005FCB07 /* PEBCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +480,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PonyEmotionBoard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -355,7 +492,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PonyEmotionBoard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
