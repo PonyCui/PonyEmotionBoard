@@ -8,6 +8,7 @@
 
 #import "PEBWireframe.h"
 #import "PEBKeyboardViewController.h"
+#import "PEBKeyboardPresenter.h"
 
 @implementation PEBWireframe
 
@@ -33,6 +34,8 @@
 - (PEBKeyboardViewController *)keyboardViewController {
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"PEBStoryBoard" bundle:nil];
     PEBKeyboardViewController *keyboardViewController = [storyBoard instantiateViewControllerWithIdentifier:@"PEBKeyboardViewController"];
+    keyboardViewController.eventHandler = [[PEBKeyboardPresenter alloc] init];
+    keyboardViewController.eventHandler.userInterface = keyboardViewController;
     return keyboardViewController;
 }
 

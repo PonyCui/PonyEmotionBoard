@@ -22,6 +22,12 @@
 		F0EDFBF01A9AC529005FCB07 /* PEBWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBEF1A9AC529005FCB07 /* PEBWireframe.m */; };
 		F0EDFBF41A9AC598005FCB07 /* PEBApplication+PEBCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBF31A9AC598005FCB07 /* PEBApplication+PEBCore.m */; };
 		F0EDFBF71A9AD3B9005FCB07 /* PEBKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBF61A9AD3B9005FCB07 /* PEBKeyboardViewController.m */; };
+		F0EDFBFA1A9C1A16005FCB07 /* PEBKeyboardPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBF91A9C1A16005FCB07 /* PEBKeyboardPresenter.m */; };
+		F0EDFBFD1A9C1A23005FCB07 /* PEBKeyboardInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBFC1A9C1A23005FCB07 /* PEBKeyboardInteractor.m */; };
+		F0EDFC001A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBFF1A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.m */; };
+		F0EDFC031A9C1CE2005FCB07 /* PEBEmotionItemInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFC021A9C1CE2005FCB07 /* PEBEmotionItemInteractor.m */; };
+		F0EDFC061A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFC051A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.m */; };
+		F0EDFC091A9C294F005FCB07 /* PEBEmotionGroupPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFC081A9C294F005FCB07 /* PEBEmotionGroupPresenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +68,18 @@
 		F0EDFBF31A9AC598005FCB07 /* PEBApplication+PEBCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PEBApplication+PEBCore.m"; sourceTree = "<group>"; };
 		F0EDFBF51A9AD3B9005FCB07 /* PEBKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBKeyboardViewController.h; sourceTree = "<group>"; };
 		F0EDFBF61A9AD3B9005FCB07 /* PEBKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBKeyboardViewController.m; sourceTree = "<group>"; };
+		F0EDFBF81A9C1A16005FCB07 /* PEBKeyboardPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBKeyboardPresenter.h; sourceTree = "<group>"; };
+		F0EDFBF91A9C1A16005FCB07 /* PEBKeyboardPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBKeyboardPresenter.m; sourceTree = "<group>"; };
+		F0EDFBFB1A9C1A23005FCB07 /* PEBKeyboardInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBKeyboardInteractor.h; sourceTree = "<group>"; };
+		F0EDFBFC1A9C1A23005FCB07 /* PEBKeyboardInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBKeyboardInteractor.m; sourceTree = "<group>"; };
+		F0EDFBFE1A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBEmotionGroupInteractor.h; sourceTree = "<group>"; };
+		F0EDFBFF1A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBEmotionGroupInteractor.m; sourceTree = "<group>"; };
+		F0EDFC011A9C1CE2005FCB07 /* PEBEmotionItemInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBEmotionItemInteractor.h; sourceTree = "<group>"; };
+		F0EDFC021A9C1CE2005FCB07 /* PEBEmotionItemInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBEmotionItemInteractor.m; sourceTree = "<group>"; };
+		F0EDFC041A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBEmotionGroupCollectionViewCell.h; sourceTree = "<group>"; };
+		F0EDFC051A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBEmotionGroupCollectionViewCell.m; sourceTree = "<group>"; };
+		F0EDFC071A9C294F005FCB07 /* PEBEmotionGroupPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBEmotionGroupPresenter.h; sourceTree = "<group>"; };
+		F0EDFC081A9C294F005FCB07 /* PEBEmotionGroupPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBEmotionGroupPresenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +222,12 @@
 		F0EDFBE51A9AC498005FCB07 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				F0EDFBFB1A9C1A23005FCB07 /* PEBKeyboardInteractor.h */,
+				F0EDFBFC1A9C1A23005FCB07 /* PEBKeyboardInteractor.m */,
+				F0EDFBFE1A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.h */,
+				F0EDFBFF1A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.m */,
+				F0EDFC011A9C1CE2005FCB07 /* PEBEmotionItemInteractor.h */,
+				F0EDFC021A9C1CE2005FCB07 /* PEBEmotionItemInteractor.m */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -211,6 +235,10 @@
 		F0EDFBE61A9AC498005FCB07 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				F0EDFBF81A9C1A16005FCB07 /* PEBKeyboardPresenter.h */,
+				F0EDFBF91A9C1A16005FCB07 /* PEBKeyboardPresenter.m */,
+				F0EDFC071A9C294F005FCB07 /* PEBEmotionGroupPresenter.h */,
+				F0EDFC081A9C294F005FCB07 /* PEBEmotionGroupPresenter.m */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -220,6 +248,8 @@
 			children = (
 				F0EDFBF51A9AD3B9005FCB07 /* PEBKeyboardViewController.h */,
 				F0EDFBF61A9AD3B9005FCB07 /* PEBKeyboardViewController.m */,
+				F0EDFC041A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.h */,
+				F0EDFC051A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -357,11 +387,17 @@
 				F0EDFBB91A9ABD4D005FCB07 /* ViewController.m in Sources */,
 				F0EDFBF41A9AC598005FCB07 /* PEBApplication+PEBCore.m in Sources */,
 				F0EDFBF01A9AC529005FCB07 /* PEBWireframe.m in Sources */,
+				F0EDFBFA1A9C1A16005FCB07 /* PEBKeyboardPresenter.m in Sources */,
+				F0EDFC031A9C1CE2005FCB07 /* PEBEmotionItemInteractor.m in Sources */,
+				F0EDFC091A9C294F005FCB07 /* PEBEmotionGroupPresenter.m in Sources */,
 				F0EDFBB61A9ABD4D005FCB07 /* AppDelegate.m in Sources */,
 				F0EDFBDE1A9AC312005FCB07 /* PEBApplication.m in Sources */,
+				F0EDFBFD1A9C1A23005FCB07 /* PEBKeyboardInteractor.m in Sources */,
 				F0EDFBB31A9ABD4D005FCB07 /* main.m in Sources */,
+				F0EDFC001A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.m in Sources */,
 				F0EDFBF71A9AD3B9005FCB07 /* PEBKeyboardViewController.m in Sources */,
 				F0EDFBE41A9AC35B005FCB07 /* PEBDefines.m in Sources */,
+				F0EDFC061A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.m in Sources */,
 				F0EDFBE11A9AC345005FCB07 /* PEBCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

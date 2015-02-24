@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class PEBKeyboardPresenter;
+
 @interface PEBKeyboardViewController : UIViewController
+
+@property (nonatomic, strong) PEBKeyboardPresenter *eventHandler;
 
 @property (nonatomic, assign) BOOL isPresented;
 
 - (void)configureViewLayouts;
+
+- (void)updateGroupCollectionView;
+
+- (void)updateItemCollectionView;
 
 @end
