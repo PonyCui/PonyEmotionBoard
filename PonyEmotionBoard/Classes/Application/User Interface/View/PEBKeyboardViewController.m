@@ -23,6 +23,8 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *itemCollectionView;
 
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+
 /**
  *  Key:indexPath.section
  *  Value:numberOfRows
@@ -277,13 +279,54 @@
 
 #pragma mark - Update View
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self updateGroupSelection];
+    [self updatePageControl];
+}
+
 - (void)updateGroupCollectionView {
     [self.groupCollectionView reloadData];
-    [self.groupCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionNone];
+    [self updateGroupSelection];
+    [self updatePageControl];
 }
 
 - (void)updateItemCollectionView {
     [self.itemCollectionView reloadData];
+}
+
+- (void)updatePageControl {
+    NSInteger numberOfPages = 0, currentPage = 0;
+    NSInteger sectionIndex = (NSInteger)(self.itemCollectionView.contentOffset.x / CGRectGetWidth(self.itemCollectionView.bounds));
+    {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:sectionIndex];
+        PEBEmotionGroupInteractor *groupInteractor = [self emotionGroupForIndexPath:indexPath];
+        NSInteger numberOfItemsPerPage = [self numberOfItemsPerSectionForGroupType:groupInteractor.type];
+        numberOfPages = (NSInteger)ceil((CGFloat)[groupInteractor.emotionItemInteractors count] / (CGFloat)numberOfItemsPerPage);
+    }
+    {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:sectionIndex];
+        PEBEmotionGroupInteractor *groupInteractor = [self emotionGroupForIndexPath:indexPath];
+        NSIndexPath *previousIndexPath = [NSIndexPath indexPathForRow:0 inSection:sectionIndex-1];
+        while ([self emotionGroupForIndexPath:previousIndexPath] == groupInteractor &&
+               previousIndexPath.section >= 0) {
+            currentPage++;
+            previousIndexPath = [NSIndexPath indexPathForRow:0 inSection:previousIndexPath.section-1];
+        }
+    }
+    self.pageControl.numberOfPages = numberOfPages;
+    self.pageControl.currentPage = currentPage;
+    self.pageControl.hidden = numberOfPages == 0;
+}
+
+- (void)updateGroupSelection {
+    NSInteger sectionIndex = (NSInteger)(self.itemCollectionView.contentOffset.x / CGRectGetWidth(self.itemCollectionView.bounds));
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:sectionIndex];
+    PEBEmotionGroupInteractor *groupInteractor = [self emotionGroupForIndexPath:indexPath];
+    NSUInteger groupIndex = [self.eventHandler.keyboardInteractor.emotionGroupInteractors
+                             indexOfObject:groupInteractor];
+    [self.groupCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:groupIndex inSection:0]
+                                           animated:YES
+                                     scrollPosition:UICollectionViewScrollPositionNone];
 }
 
 @end

@@ -14,7 +14,8 @@
 - (NSArray *)emotionGroupInteractors {
     if (_emotionGroupInteractors == nil) {
         PEBEmotionGroupInteractor *demo = [[PEBEmotionGroupInteractor alloc] init];
-        _emotionGroupInteractors = @[demo];
+        PEBEmotionGroupInteractor *demo2 = [[PEBEmotionGroupInteractor alloc] init];
+        _emotionGroupInteractors = @[demo, demo2];
     }
     return _emotionGroupInteractors;
 }

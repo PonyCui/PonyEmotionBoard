@@ -197,6 +197,7 @@
                     <connections>
                         <outlet property="groupCollectionView" destination="ZNc-HZ-egv" id="eP8-RT-2r4"/>
                         <outlet property="itemCollectionView" destination="qAW-Xv-KLx" id="kjR-MB-46P"/>
+                        <outlet property="pageControl" destination="It7-yX-o4t" id="VsC-GP-ure"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRG-SF-H5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
