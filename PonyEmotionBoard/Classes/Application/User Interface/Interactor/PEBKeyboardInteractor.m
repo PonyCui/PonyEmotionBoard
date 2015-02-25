@@ -12,8 +12,11 @@
 @implementation PEBKeyboardInteractor
 
 - (NSArray *)emotionGroupInteractors {
-    PEBEmotionGroupInteractor *demo = [[PEBEmotionGroupInteractor alloc] init];
-    return @[demo];
+    if (_emotionGroupInteractors == nil) {
+        PEBEmotionGroupInteractor *demo = [[PEBEmotionGroupInteractor alloc] init];
+        _emotionGroupInteractors = @[demo];
+    }
+    return _emotionGroupInteractors;
 }
 
 @end

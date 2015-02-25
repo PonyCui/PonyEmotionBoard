@@ -221,15 +221,18 @@
 }
 
 - (PEBEmotionItemInteractor *)emotionItemForIndexPath:(NSIndexPath *)indexPath {
-    NSUInteger groupInteractorIndex = [self.sectionGroupIndexCacheDictionary[@(indexPath.section)]
-                                       integerValue];
-    if (groupInteractorIndex < [self.eventHandler.keyboardInteractor.emotionGroupInteractors count]) {
-        PEBEmotionGroupInteractor *groupInteractor = self.eventHandler.keyboardInteractor.emotionGroupInteractors[groupInteractorIndex];
-        NSUInteger cellIndex = [self cellIndexForIndexPath:indexPath];
-        if (cellIndex < [groupInteractor.emotionItemInteractors count]) {
-            PEBEmotionItemInteractor *itemIntreactor = groupInteractor.emotionItemInteractors[cellIndex];
-            return itemIntreactor;
-        }
+    PEBEmotionGroupInteractor *groupInteractor = [self emotionGroupForIndexPath:indexPath];
+    NSUInteger cellIndex = [self cellIndexForIndexPath:indexPath];
+    NSInteger currentPosition = indexPath.section - 1;
+    while ([self emotionGroupForIndexPath:[NSIndexPath indexPathForRow:0 inSection:currentPosition]]
+           == groupInteractor &&
+           currentPosition >= 0) {
+        cellIndex += [self numberOfItemsPerSectionForGroupType:groupInteractor.type];
+        currentPosition--;
+    }
+    if (cellIndex < [groupInteractor.emotionItemInteractors count]) {
+        PEBEmotionItemInteractor *itemIntreactor = groupInteractor.emotionItemInteractors[cellIndex];
+        return itemIntreactor;
     }
     return nil;
 }

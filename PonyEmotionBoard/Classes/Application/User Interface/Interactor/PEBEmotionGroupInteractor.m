@@ -18,7 +18,7 @@
 - (NSArray *)emotionItemInteractors {
     PEBEmotionItemInteractor *demo = [[PEBEmotionItemInteractor alloc] init];
     NSMutableArray *array = [NSMutableArray array];
-    for (NSUInteger i=0; i<16; i++) {
+    for (NSUInteger i=0; i<80; i++) {
         [array addObject:demo];
     }
     return array;
