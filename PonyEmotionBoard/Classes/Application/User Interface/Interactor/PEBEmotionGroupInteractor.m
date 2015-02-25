@@ -16,12 +16,15 @@
 }
 
 - (NSArray *)emotionItemInteractors {
-    PEBEmotionItemInteractor *demo = [[PEBEmotionItemInteractor alloc] init];
-    NSMutableArray *array = [NSMutableArray array];
-    for (NSUInteger i=0; i<80; i++) {
-        [array addObject:demo];
+    if (_emotionItemInteractors == nil) {
+        NSMutableArray *array = [NSMutableArray array];
+        for (NSUInteger i=0; i<80; i++) {
+            PEBEmotionItemInteractor *demo = [[PEBEmotionItemInteractor alloc] init];
+            [array addObject:demo];
+        }
+        _emotionItemInteractors = array;
     }
-    return array;
+    return _emotionItemInteractors;
 }
 
 - (UIImage *)iconImage {

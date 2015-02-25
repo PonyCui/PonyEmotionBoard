@@ -11,7 +11,10 @@
 @implementation PEBEmotionItemInteractor
 
 - (UIImage *)iconImage {
-    return [UIImage imageNamed:@"Expression_1"];
+    if (_iconImage == nil) {
+        _iconImage = [UIImage imageNamed:[NSString stringWithFormat:@"Expression_%u", arc4random()%80+1]];
+    }
+    return _iconImage;
 }
 
 - (NSString *)emotionText {
