@@ -76,9 +76,6 @@
 }
 
 - (void)configureItemCollectitonViewInsets {
-    //280.0 320.0 360.0
-//    CGFloat maxAreaWidth = CGRectGetWidth(self.view.bounds) - 40 -
-//                           ((NSInteger)CGRectGetWidth(self.view.bounds) % 40);
     CGFloat insetWidth = (NSInteger)CGRectGetWidth(self.view.bounds) % 40 / 2.0 + 20;
     [(UICollectionViewFlowLayout *)self.itemCollectionView.collectionViewLayout
      setSectionInset:UIEdgeInsetsMake(20, insetWidth, 26, insetWidth)];
@@ -177,6 +174,24 @@
     }
 }
 
+#pragma mark - Emotion View Layout Calculations
+
+- (NSUInteger)numberOfRowsPerLineForGroupType:(PEBEmotionGroupType)groupType {
+    CGFloat viewWidth = CGRectGetWidth([[[[UIApplication sharedApplication] delegate] window] bounds]);
+    UIEdgeInsets viewInset = [(UICollectionViewFlowLayout *)self.itemCollectionView.collectionViewLayout sectionInset];
+    CGSize cellSize = [self sizeOfItemForGroupType:groupType];
+    NSUInteger numbersOfCellPerLine = (NSUInteger)((viewWidth - viewInset.left - viewInset.right) / cellSize.width);
+    return numbersOfCellPerLine;
+}
+
+- (NSUInteger)numberOfLinesPerSectionForGroupType:(PEBEmotionGroupType)groupType {
+    CGFloat viewHeight = 178.0;
+    UIEdgeInsets viewInset = [(UICollectionViewFlowLayout *)self.itemCollectionView.collectionViewLayout sectionInset];
+    CGSize cellSize = [self sizeOfItemForGroupType:groupType];
+    NSUInteger numbersOfLines = (NSUInteger)((viewHeight - viewInset.top - viewInset.bottom) / cellSize.height);
+    return numbersOfLines;
+}
+
 - (NSUInteger)numberOfItemsPerSectionForGroupType:(PEBEmotionGroupType)groupType {
     CGFloat viewWidth = CGRectGetWidth([[[[UIApplication sharedApplication] delegate] window] bounds]);
     CGFloat viewHeight = 178.0;
@@ -186,8 +201,6 @@
     NSUInteger numbersOfLines = (NSUInteger)((viewHeight - viewInset.top - viewInset.bottom) / cellSize.height);
     return numbersOfCellPerLine * numbersOfLines;
 }
-
-//- (CGFloat)insetForGroupType
 
 - (CGSize)sizeOfItemForGroupType:(PEBEmotionGroupType)groupType {
     if (groupType == PEBEmotionGroupTypeEmoji) {
@@ -212,12 +225,37 @@
                                        integerValue];
     if (groupInteractorIndex < [self.eventHandler.keyboardInteractor.emotionGroupInteractors count]) {
         PEBEmotionGroupInteractor *groupInteractor = self.eventHandler.keyboardInteractor.emotionGroupInteractors[groupInteractorIndex];
-        if (indexPath.row < [groupInteractor.emotionItemInteractors count]) {
-            PEBEmotionItemInteractor *itemIntreactor = groupInteractor.emotionItemInteractors[indexPath.row];
+        NSUInteger cellIndex = [self cellIndexForIndexPath:indexPath];
+        if (cellIndex < [groupInteractor.emotionItemInteractors count]) {
+            PEBEmotionItemInteractor *itemIntreactor = groupInteractor.emotionItemInteractors[cellIndex];
             return itemIntreactor;
         }
     }
     return nil;
+}
+
+- (NSInteger)cellIndexForIndexPath:(NSIndexPath *)indexPath {
+    //纵向有限矩阵 -> 横向有限矩阵
+    //1.将m分解为a、b(a < b)，矩阵横向元素个数为r，矩阵纵向元素个数为c，则n=a*r+b/c
+    //2.上述m的分解方法为 m%c=j a=j b=m-j
+    //3.如果m<c,则n=m*r，如果m%c=0，则n=m/c
+    PEBEmotionGroupInteractor *groupInteractor = [self emotionGroupForIndexPath:indexPath];
+    NSUInteger r = [self numberOfRowsPerLineForGroupType:groupInteractor.type];
+    NSUInteger c = [self numberOfLinesPerSectionForGroupType:groupInteractor.type];
+    NSUInteger m = indexPath.row;
+    if (m<c) {
+        return m*r;
+    }
+    else if (m%c==0) {
+        return m/c;
+    }
+    else {
+        NSUInteger j = m % c;
+        NSUInteger a = j;
+        NSUInteger b = m-j;
+        NSUInteger n = a*r+b/c;
+        return n;
+    }
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
