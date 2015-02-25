@@ -7,6 +7,7 @@
 //
 
 #import "PEBKeyboardPresenter.h"
+#import "PEBKeyboardViewController.h"
 #import "PEBKeyboardInteractor.h"
 
 @implementation PEBKeyboardPresenter
@@ -21,7 +22,8 @@
 }
 
 - (void)updateView {
-    
+    [self.userInterface updateGroupCollectionView];
+    [self.userInterface updateItemCollectionView];
 }
 
 @end

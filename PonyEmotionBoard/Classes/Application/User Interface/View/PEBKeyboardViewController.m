@@ -11,8 +11,11 @@
 #import "PEBKeyboardInteractor.h"
 #import "PEBEmotionGroupCollectionViewCell.h"
 #import "PEBEmotionGroupPresenter.h"
+#import "PEBEmotionGroupInteractor.h"
+#import "PEBEmotionItemCollectionViewCell.h"
+#import "PEBEmotionItemPresenter.h"
 
-@interface PEBKeyboardViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface PEBKeyboardViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, weak) NSLayoutConstraint *viewBottomSpaceConstraint;
 
@@ -20,16 +23,31 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *itemCollectionView;
 
+/**
+ *  Key:indexPath.section
+ *  Value:numberOfRows
+ */
+@property (nonatomic, copy) NSDictionary *rowCountCacheDictionary;
+
+/**
+ *  Key:indexPath.section
+ *  Value:groupInteractors[->indexPath.section<-]
+ */
+@property (nonatomic, copy) NSDictionary *sectionGroupIndexCacheDictionary;
+
 @end
 
 @implementation PEBKeyboardViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.groupCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionNone];
-    });
+    [self.eventHandler updateView];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self configureItemCollectitonViewInsets];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,6 +73,15 @@
         self.viewBottomSpaceConstraint = [constraints lastObject];
         [self.view.superview addConstraints:constraints];
     }
+}
+
+- (void)configureItemCollectitonViewInsets {
+    //280.0 320.0 360.0
+//    CGFloat maxAreaWidth = CGRectGetWidth(self.view.bounds) - 40 -
+//                           ((NSInteger)CGRectGetWidth(self.view.bounds) % 40);
+    CGFloat insetWidth = (NSInteger)CGRectGetWidth(self.view.bounds) % 40 / 2.0 + 20;
+    [(UICollectionViewFlowLayout *)self.itemCollectionView.collectionViewLayout
+     setSectionInset:UIEdgeInsetsMake(20, insetWidth, 26, insetWidth)];
 }
 
 #pragma mark - isPresented
@@ -96,7 +123,19 @@
         return cell;
     }
     else {
-        return nil;
+        NSString *cellIdentifier;
+        PEBEmotionGroupInteractor *groupInteractor = [self emotionGroupForIndexPath:indexPath];
+        if (groupInteractor.type == PEBEmotionGroupTypeEmoji) {
+            cellIdentifier = @"EmojiItemCell";
+        }
+        else {
+            cellIdentifier = @"CustomItemCell";
+        }
+        PEBEmotionItemCollectionViewCell *cell = [collectionView
+                                                  dequeueReusableCellWithReuseIdentifier:cellIdentifier
+                                                  forIndexPath:indexPath];
+        cell.eventHandler.itemInteractor = [self emotionItemForIndexPath:indexPath];
+        return cell;
     }
 }
 
@@ -105,7 +144,27 @@
         return 1;
     }
     else {
-        return 0;
+        NSMutableDictionary *rowCountCache = [NSMutableDictionary dictionary];
+        NSMutableDictionary *sectionGroupIndexCache = [NSMutableDictionary dictionary];
+        __block NSUInteger totalSections = 0;
+        [self.eventHandler.keyboardInteractor.emotionGroupInteractors
+         enumerateObjectsUsingBlock:^(PEBEmotionGroupInteractor *obj, NSUInteger idx, BOOL *stop) {
+             NSUInteger numberOfItems = [obj.emotionItemInteractors count];
+             NSUInteger itemsPerSection = [self numberOfItemsPerSectionForGroupType:obj.type];
+             NSUInteger numberOfSections = (NSUInteger)ceil((CGFloat)numberOfItems / (CGFloat)itemsPerSection);
+             totalSections += numberOfSections;
+             {
+                 NSInteger position = totalSections-1;
+                 do {
+                     [rowCountCache setObject:@(itemsPerSection) forKey:@(position)];
+                     [sectionGroupIndexCache setObject:@(idx) forKey:@(position)];
+                     position--;
+                 } while (rowCountCache[@(position)] == nil && position >= 0);
+             }
+        }];
+        self.rowCountCacheDictionary = rowCountCache;
+        self.sectionGroupIndexCacheDictionary = sectionGroupIndexCache;
+        return totalSections;
     }
 }
 
@@ -114,8 +173,76 @@
         return [self.eventHandler.keyboardInteractor.emotionGroupInteractors count];
     }
     else {
-        return 0;
+        return [self.rowCountCacheDictionary[@(section)] integerValue];
     }
+}
+
+- (NSUInteger)numberOfItemsPerSectionForGroupType:(PEBEmotionGroupType)groupType {
+    CGFloat viewWidth = CGRectGetWidth([[[[UIApplication sharedApplication] delegate] window] bounds]);
+    CGFloat viewHeight = 178.0;
+    UIEdgeInsets viewInset = [(UICollectionViewFlowLayout *)self.itemCollectionView.collectionViewLayout sectionInset];
+    CGSize cellSize = [self sizeOfItemForGroupType:groupType];
+    NSUInteger numbersOfCellPerLine = (NSUInteger)((viewWidth - viewInset.left - viewInset.right) / cellSize.width);
+    NSUInteger numbersOfLines = (NSUInteger)((viewHeight - viewInset.top - viewInset.bottom) / cellSize.height);
+    return numbersOfCellPerLine * numbersOfLines;
+}
+
+//- (CGFloat)insetForGroupType
+
+- (CGSize)sizeOfItemForGroupType:(PEBEmotionGroupType)groupType {
+    if (groupType == PEBEmotionGroupTypeEmoji) {
+        return CGSizeMake(40.0, 36.0);
+    }
+    else {
+        return CGSizeZero;
+    }
+}
+
+- (PEBEmotionGroupInteractor *)emotionGroupForIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger groupInteractorIndex = [self.sectionGroupIndexCacheDictionary[@(indexPath.section)]
+                                       integerValue];
+    if (groupInteractorIndex < [self.eventHandler.keyboardInteractor.emotionGroupInteractors count]) {
+        return self.eventHandler.keyboardInteractor.emotionGroupInteractors[groupInteractorIndex];
+    }
+    return nil;
+}
+
+- (PEBEmotionItemInteractor *)emotionItemForIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger groupInteractorIndex = [self.sectionGroupIndexCacheDictionary[@(indexPath.section)]
+                                       integerValue];
+    if (groupInteractorIndex < [self.eventHandler.keyboardInteractor.emotionGroupInteractors count]) {
+        PEBEmotionGroupInteractor *groupInteractor = self.eventHandler.keyboardInteractor.emotionGroupInteractors[groupInteractorIndex];
+        if (indexPath.row < [groupInteractor.emotionItemInteractors count]) {
+            PEBEmotionItemInteractor *itemIntreactor = groupInteractor.emotionItemInteractors[indexPath.row];
+            return itemIntreactor;
+        }
+    }
+    return nil;
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (collectionView == self.itemCollectionView) {
+        return CGSizeMake(40.0, 36.0);
+    }
+    else if (collectionView == self.groupCollectionView) {
+        return CGSizeMake(60.0, 36.0);
+    }
+    else {
+        return CGSizeZero;
+    }
+}
+
+#pragma mark - Update View
+
+- (void)updateGroupCollectionView {
+    [self.groupCollectionView reloadData];
+    [self.groupCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionNone];
+}
+
+- (void)updateItemCollectionView {
+    [self.itemCollectionView reloadData];
 }
 
 @end

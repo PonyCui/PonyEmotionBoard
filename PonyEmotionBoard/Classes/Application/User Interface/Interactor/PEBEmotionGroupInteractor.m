@@ -17,7 +17,11 @@
 
 - (NSArray *)emotionItemInteractors {
     PEBEmotionItemInteractor *demo = [[PEBEmotionItemInteractor alloc] init];
-    return @[demo];
+    NSMutableArray *array = [NSMutableArray array];
+    for (NSUInteger i=0; i<100; i++) {
+        [array addObject:demo];
+    }
+    return array;
 }
 
 - (UIImage *)iconImage {

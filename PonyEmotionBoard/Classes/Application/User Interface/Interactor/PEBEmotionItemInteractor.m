@@ -18,4 +18,8 @@
     return @"[开心]";
 }
 
+- (NSString *)emotionDescription {
+    return @"开心";
+}
+
 @end
