@@ -29,12 +29,16 @@
 }
 
 - (IBAction)handleEmotionButtonTapped:(id)sender {
-    [[PEBApplication sharedInstance] setEditing:YES textInputContainer:self.textField];
+    [[PEBApplication sharedInstance] setEditing:YES
+                           parentViewController:self
+                             textInputContainer:self.textField];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self.textField resignFirstResponder];
-    [[PEBApplication sharedInstance] setEditing:NO textInputContainer:self.textField];
+    [[PEBApplication sharedInstance] setEditing:NO
+                           parentViewController:self
+                             textInputContainer:nil];
     return YES;
 }
 

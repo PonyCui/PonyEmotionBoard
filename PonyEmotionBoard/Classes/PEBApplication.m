@@ -40,18 +40,17 @@
     return self;
 }
 
-- (void)setEditing:(BOOL)isEditing textInputContainer:(UIView<UITextInput> *)textInputContainer {
-    id textFieldViewController = textInputContainer;
-    do {
-        textFieldViewController = [(UIView *)textFieldViewController nextResponder];
-    } while (![textFieldViewController isKindOfClass:[UIViewController class]] &&
-             textFieldViewController != nil);
+- (void)setEditing:(BOOL)isEditing
+        parentViewController:(UIViewController *)parentViewController
+        textInputContainer:(UIView<UITextInput> *)textInputContainer {
     if (isEditing) {
-        [self.core.wireframe presentEmotionBoardToViewController:textFieldViewController
-                                              textInputContainer:textInputContainer];
+        [self.core.wireframe
+         presentEmotionBoardToViewController:parentViewController
+         textInputContainer:textInputContainer];
     }
     else {
-        [self.core.wireframe dismissEmotionBoardFromViewController:textFieldViewController];
+        [self.core.wireframe
+         dismissEmotionBoardFromViewController:parentViewController];
     }
 }
 
