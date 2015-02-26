@@ -25,6 +25,10 @@
 
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
+@property (weak, nonatomic) IBOutlet UIButton *sendButton;
+
+@property (nonatomic, assign) BOOL wasEditing;
+
 /**
  *  Key:indexPath.section
  *  Value:numberOfRows
@@ -44,6 +48,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.eventHandler updateView];
+    [self setSendButtonEnabled:YES];//Fix me:Should Remove
     // Do any additional setup after loading the view.
 }
 
@@ -93,6 +98,10 @@
 }
 
 - (void)present {
+    if ([(UIView *)self.textInputContainer isFirstResponder]) {
+        self.wasEditing = YES;
+        [(UIView *)self.textInputContainer resignFirstResponder];
+    }
     self.viewBottomSpaceConstraint.constant = 0.0;
     [UIView animateWithDuration:0.25 animations:^{
         [self.view layoutIfNeeded];
@@ -104,6 +113,10 @@
     [UIView animateWithDuration:0.25 animations:^{
         [self.view layoutIfNeeded];
     }];
+    if (self.wasEditing) {
+        self.wasEditing = NO;
+        [(UIView *)self.textInputContainer becomeFirstResponder];
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -358,5 +371,29 @@
                                            animated:YES
                                      scrollPosition:UICollectionViewScrollPositionNone];
 }
+
+#pragma mark - events
+
+- (IBAction)handleSendButtonTapped:(id)sender {
+    if ([self.textInputContainer isKindOfClass:[UITextField class]]) {
+        [[(UITextField *)self.textInputContainer delegate]
+         textFieldShouldReturn:(UITextField *)self.textInputContainer];
+    }
+}
+
+- (void)setSendButtonEnabled:(BOOL)enabled {
+    if (enabled) {
+        self.sendButton.enabled = YES;
+        self.sendButton.backgroundColor = [UIColor colorWithRed:0.0
+                                                          green:122.0/255.0
+                                                           blue:255.0/255.0
+                                                          alpha:1.0];
+    }
+    else {
+        self.sendButton.enabled = NO;
+        self.sendButton.backgroundColor = [UIColor clearColor];
+    }
+}
+
 
 @end

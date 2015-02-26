@@ -14,4 +14,6 @@
 - (void)presentEmotionBoardToViewController:(UIViewController *)viewController
                          textInputContainer:(id<UITextInput>)textInputContainer;
 
+- (void)dismissEmotionBoardFromViewController:(UIViewController *)viewController;
+
 @end

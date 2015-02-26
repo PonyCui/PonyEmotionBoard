@@ -30,6 +30,18 @@
     [keyboardViewController setIsPresented:YES];
 }
 
+- (void)dismissEmotionBoardFromViewController:(UIViewController *)viewController {
+    __block PEBKeyboardViewController *keyboardViewController;
+    [viewController.childViewControllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[PEBKeyboardViewController class]]) {
+            keyboardViewController = obj;
+        }
+    }];
+    if (keyboardViewController != nil) {
+        [keyboardViewController setIsPresented:NO];
+    }
+}
+
 #pragma mark - Getter
 
 - (PEBKeyboardViewController *)keyboardViewController {

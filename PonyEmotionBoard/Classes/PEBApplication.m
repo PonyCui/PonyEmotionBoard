@@ -50,6 +50,9 @@
         [self.core.wireframe presentEmotionBoardToViewController:textFieldViewController
                                               textInputContainer:textInputContainer];
     }
+    else {
+        [self.core.wireframe dismissEmotionBoardFromViewController:textFieldViewController];
+    }
 }
 
 @end

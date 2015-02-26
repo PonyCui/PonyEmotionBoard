@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "PEBApplication.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.textField.delegate = self;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -29,6 +30,12 @@
 
 - (IBAction)handleEmotionButtonTapped:(id)sender {
     [[PEBApplication sharedInstance] setEditing:YES textInputContainer:self.textField];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.textField resignFirstResponder];
+    [[PEBApplication sharedInstance] setEditing:NO textInputContainer:self.textField];
+    return YES;
 }
 
 @end
