@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/PonyGroup/PonyEmotionBoard.git"}
 
-  s.source_files  = "PonyEmotionBoard/Classes"
+  s.source_files  = "PonyEmotionBoard/Classes","PonyEmotionBoard/Classes/**","PonyEmotionBoard/Classes/**/**","PonyEmotionBoard/Classes/**/**/**"
 
   s.resources = "PonyEmotionBoard/Resources/*.xcassets", "PonyEmotionBoard/Resources/*.storyboard"
 
