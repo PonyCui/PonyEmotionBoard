@@ -176,6 +176,30 @@
     }
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (collectionView == self.groupCollectionView) {
+        __block NSInteger itemPage = NSIntegerMax;
+        PEBEmotionGroupInteractor *groupInteractor;
+        if (indexPath.row < [self.eventHandler.keyboardInteractor.emotionGroupInteractors count]) {
+            groupInteractor = self.eventHandler.keyboardInteractor.emotionGroupInteractors[indexPath.row];
+        }
+        [self.sectionGroupIndexCacheDictionary
+         enumerateKeysAndObjectsUsingBlock:^(NSNumber *key, NSNumber *obj, BOOL *stop) {
+             NSInteger sectionIndex = [key integerValue];
+             NSInteger groupIndex = [obj integerValue];
+             if (groupIndex < [self.eventHandler.keyboardInteractor.emotionGroupInteractors count] &&
+                 self.eventHandler.keyboardInteractor.emotionGroupInteractors[groupIndex] == groupInteractor) {
+                 itemPage = MIN(itemPage, sectionIndex);
+             }
+        }];
+        if (itemPage < NSIntegerMax && itemPage >= 0) {
+            [self.itemCollectionView
+             setContentOffset:CGPointMake(CGRectGetWidth(self.itemCollectionView.bounds) * itemPage, 0)
+             animated:NO];
+        }
+    }
+}
+
 #pragma mark - Emotion View Layout Calculations
 
 - (NSUInteger)numberOfRowsPerLineForGroupType:(PEBEmotionGroupType)groupType {
@@ -279,7 +303,7 @@
 
 #pragma mark - Update View
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self updateGroupSelection];
     [self updatePageControl];
 }
