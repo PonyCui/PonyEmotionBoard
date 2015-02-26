@@ -9,6 +9,7 @@
 #import "PEBApplication.h"
 #import "PEBCore.h"
 #import "PEBWireframe.h"
+#import "PEBKeyboardViewController.h"
 
 @interface PEBApplication ()
 
@@ -38,6 +39,16 @@
         self.core = [[PEBCore alloc] init];
     }
     return self;
+}
+
+- (BOOL)isEditingWithParentViewController:(UIViewController *)parentViewController {
+    __block BOOL isEditing = NO;
+    [[parentViewController childViewControllers] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[PEBKeyboardViewController class]]) {
+            isEditing = [(PEBKeyboardViewController *)obj isPresented];
+        }
+    }];
+    return isEditing;
 }
 
 - (void)setEditing:(BOOL)isEditing

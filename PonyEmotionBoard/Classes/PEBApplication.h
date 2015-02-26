@@ -13,6 +13,8 @@
 
 + (PEBApplication *)sharedInstance;
 
+- (BOOL)isEditingWithParentViewController:(UIViewController *)parentViewController;
+
 - (void)setEditing:(BOOL)isEditing
         parentViewController:(UIViewController *)parentViewController
         textInputContainer:(UIView<UITextInput> *)textInputContainer;
