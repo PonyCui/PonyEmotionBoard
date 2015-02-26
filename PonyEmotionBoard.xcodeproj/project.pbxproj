@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6364A5BA1A9EC68800409722 /* PEBKeyboardDelegateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364A5B91A9EC68800409722 /* PEBKeyboardDelegateObject.m */; };
 		F0EDFBB31A9ABD4D005FCB07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBB21A9ABD4D005FCB07 /* main.m */; };
 		F0EDFBB61A9ABD4D005FCB07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBB51A9ABD4D005FCB07 /* AppDelegate.m */; };
 		F0EDFBB91A9ABD4D005FCB07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBB81A9ABD4D005FCB07 /* ViewController.m */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6364A5B81A9EC68800409722 /* PEBKeyboardDelegateObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBKeyboardDelegateObject.h; sourceTree = "<group>"; };
+		6364A5B91A9EC68800409722 /* PEBKeyboardDelegateObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBKeyboardDelegateObject.m; sourceTree = "<group>"; };
 		F0EDFBAD1A9ABD4D005FCB07 /* PonyEmotionBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PonyEmotionBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EDFBB11A9ABD4D005FCB07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0EDFBB21A9ABD4D005FCB07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -256,6 +259,8 @@
 			children = (
 				F0EDFBF51A9AD3B9005FCB07 /* PEBKeyboardViewController.h */,
 				F0EDFBF61A9AD3B9005FCB07 /* PEBKeyboardViewController.m */,
+				6364A5B81A9EC68800409722 /* PEBKeyboardDelegateObject.h */,
+				6364A5B91A9EC68800409722 /* PEBKeyboardDelegateObject.m */,
 				F0EDFC041A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.h */,
 				F0EDFC051A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.m */,
 				F0EDFC0A1A9D76F5005FCB07 /* PEBEmotionItemCollectionViewCell.h */,
@@ -404,6 +409,7 @@
 				F0EDFBB61A9ABD4D005FCB07 /* AppDelegate.m in Sources */,
 				F0EDFBDE1A9AC312005FCB07 /* PEBApplication.m in Sources */,
 				F0EDFBFD1A9C1A23005FCB07 /* PEBKeyboardInteractor.m in Sources */,
+				6364A5BA1A9EC68800409722 /* PEBKeyboardDelegateObject.m in Sources */,
 				F0EDFC0C1A9D76F5005FCB07 /* PEBEmotionItemCollectionViewCell.m in Sources */,
 				F0EDFBB31A9ABD4D005FCB07 /* main.m in Sources */,
 				F0EDFC001A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.m in Sources */,

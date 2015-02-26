@@ -56,8 +56,8 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="hht-1x-Vhm" id="hDR-vT-DVH"/>
-                                    <outlet property="delegate" destination="hht-1x-Vhm" id="JO1-oO-16n"/>
+                                    <outlet property="dataSource" destination="wbI-m6-SNB" id="3Pe-zX-N3N"/>
+                                    <outlet property="delegate" destination="wbI-m6-SNB" id="9on-j8-YE7"/>
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSS-RY-d44">
@@ -169,8 +169,8 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="hht-1x-Vhm" id="dwC-M5-v4b"/>
-                                    <outlet property="delegate" destination="hht-1x-Vhm" id="Jdo-e3-eZw"/>
+                                    <outlet property="dataSource" destination="wbI-m6-SNB" id="MMh-Ja-ipG"/>
+                                    <outlet property="delegate" destination="wbI-m6-SNB" id="jwZ-e3-DBX"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -204,11 +204,18 @@
                     <connections>
                         <outlet property="groupCollectionView" destination="ZNc-HZ-egv" id="eP8-RT-2r4"/>
                         <outlet property="itemCollectionView" destination="qAW-Xv-KLx" id="kjR-MB-46P"/>
-                        <outlet property="pageControl" destination="It7-yX-o4t" id="VsC-GP-ure"/>
+                        <outlet property="keyboardDelegates" destination="wbI-m6-SNB" id="8ff-RU-e9o"/>
                         <outlet property="sendButton" destination="hSS-RY-d44" id="nBX-9z-suy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRG-SF-H5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="wbI-m6-SNB" customClass="PEBKeyboardDelegateObject">
+                    <connections>
+                        <outlet property="groupCollectionView" destination="ZNc-HZ-egv" id="rdz-j2-nZN"/>
+                        <outlet property="itemCollectionView" destination="qAW-Xv-KLx" id="aOU-WG-fuG"/>
+                        <outlet property="pageControl" destination="It7-yX-o4t" id="xHC-Nl-WzF"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="455" y="488"/>
         </scene>
