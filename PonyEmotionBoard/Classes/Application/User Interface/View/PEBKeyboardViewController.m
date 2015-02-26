@@ -117,16 +117,39 @@
     [UIView animateWithDuration:0.25 animations:^{
         [self.view layoutIfNeeded];
     }];
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:UIKeyboardWillShowNotification
+     object:nil
+     userInfo:@{
+                UIKeyboardFrameEndUserInfoKey :
+                    [NSValue valueWithCGRect:CGRectMake(0,
+                                                        0,
+                                                        0,
+                                                        216.0)]
+                }];
 }
 
 - (void)dismiss {
-    self.viewBottomSpaceConstraint.constant = -216.0;
-    [UIView animateWithDuration:0.25 animations:^{
-        [self.view layoutIfNeeded];
-    }];
     if (self.wasEditing) {
         self.wasEditing = NO;
         [(UIView *)self.textInputContainer becomeFirstResponder];
+        self.viewBottomSpaceConstraint.constant = -216.0;
+    }
+    else {
+        self.viewBottomSpaceConstraint.constant = -216.0;
+        [UIView animateWithDuration:0.25 animations:^{
+            [self.view layoutIfNeeded];
+        }];
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:UIKeyboardWillHideNotification
+         object:nil
+         userInfo:@{
+                    UIKeyboardFrameEndUserInfoKey :
+                        [NSValue valueWithCGRect:CGRectMake(0,
+                                                            0,
+                                                            0,
+                                                            216.0)]
+                    }];
     }
 }
 
