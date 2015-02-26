@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) PEBKeyboardPresenter *eventHandler;
 
-@property (nonatomic, weak) id<UITextInput> textInputContainer;
+@property (nonatomic, weak) UITextField<UITextInput> *textInputContainer;
 
 @property (nonatomic, assign) BOOL isPresented;
 

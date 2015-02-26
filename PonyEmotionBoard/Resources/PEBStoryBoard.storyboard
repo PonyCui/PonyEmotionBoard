@@ -55,6 +55,9 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="scrollsToTop" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="wbI-m6-SNB" id="3Pe-zX-N3N"/>
                                     <outlet property="delegate" destination="wbI-m6-SNB" id="9on-j8-YE7"/>
@@ -168,6 +171,9 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="scrollsToTop" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="wbI-m6-SNB" id="MMh-Ja-ipG"/>
                                     <outlet property="delegate" destination="wbI-m6-SNB" id="jwZ-e3-DBX"/>

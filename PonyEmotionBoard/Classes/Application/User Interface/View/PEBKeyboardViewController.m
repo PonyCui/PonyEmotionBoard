@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 崔 明辉. All rights reserved.
 //
 
+#import <ReactiveCocoa/ReactiveCocoa.h>
 #import "PEBKeyboardViewController.h"
 #import "PEBKeyboardPresenter.h"
 #import "PEBKeyboardInteractor.h"
@@ -31,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configureSendButtonReactiveCocoa];
     [self.eventHandler updateView];
     [self setSendButtonEnabled:YES];//Fix me:Should Remove
     // Do any additional setup after loading the view.
@@ -106,13 +108,17 @@
 #pragma mark - Update View
 
 - (void)updateGroupCollectionView {
+    [self.keyboardDelegates calculates];
     [self.groupCollectionView reloadData];
     [self.keyboardDelegates updateGroupSelection];
     [self.keyboardDelegates updatePageControl];
 }
 
 - (void)updateItemCollectionView {
+    [self.keyboardDelegates calculates];
     [self.itemCollectionView reloadData];
+    [self.keyboardDelegates updateGroupSelection];
+    [self.keyboardDelegates updatePageControl];
 }
 
 #pragma mark - Setter 
@@ -122,12 +128,18 @@
     self.keyboardDelegates.eventHandler = _eventHandler;
 }
 
-- (void)setTextInputContainer:(id<UITextInput>)textInputContainer {
+- (void)setTextInputContainer:(UITextField<UITextInput> *)textInputContainer {
     _textInputContainer = textInputContainer;
     self.keyboardDelegates.textInputContainer = textInputContainer;
 }
 
-#pragma mark - events
+#pragma mark - Send Button
+
+- (void)configureSendButtonReactiveCocoa {
+    [RACObserve(self, textInputContainer.text) subscribeNext:^(NSString *x) {
+        [self setSendButtonEnabled:x.length];
+    }];
+}
 
 - (IBAction)handleSendButtonTapped:(id)sender {
     if ([self.textInputContainer isKindOfClass:[UITextField class]]) {

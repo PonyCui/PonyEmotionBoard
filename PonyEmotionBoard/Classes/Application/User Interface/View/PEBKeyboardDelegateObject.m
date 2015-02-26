@@ -23,21 +23,67 @@
 
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
-/**
- *  Key:indexPath.section
- *  Value:numberOfRows
- */
-@property (nonatomic, copy) NSDictionary *rowCountCacheDictionary;
+@property (nonatomic, assign) NSInteger totalSections;
 
 /**
  *  Key:indexPath.section
- *  Value:groupInteractors[->indexPath.section<-]
+ *  Value:rowCount
  */
-@property (nonatomic, copy) NSDictionary *sectionGroupIndexCacheDictionary;
+@property (nonatomic, copy) NSArray *numberOfItems;
+
+/**
+ *  Key:indexPath.section
+ *  Value:groupInteractor[->indexPath.section<-]
+ */
+@property (nonatomic, copy) NSArray *groupIndexes;
+
+/**
+ *  Key:groupIndex
+ *  Value:sectionCount
+ */
+@property (nonatomic, copy) NSArray *groupSections;
 
 @end
 
 @implementation PEBKeyboardDelegateObject
+
+#pragma mark - Calculations
+
+/**
+ *  各种计算
+ */
+- (void)calculates {
+    __block NSUInteger totalSections = 0;
+    NSMutableArray *numberOfItemsArray = [NSMutableArray array];
+    NSMutableArray *groupIndexes = [NSMutableArray array];
+    NSMutableArray *groupSections = [NSMutableArray array];
+    [self.eventHandler.keyboardInteractor.emotionGroupInteractors
+     enumerateObjectsUsingBlock:^(PEBEmotionGroupInteractor *obj, NSUInteger idx, BOOL *stop) {
+         NSUInteger numberOfItems = [obj.emotionItemInteractors count];
+         NSUInteger itemsPerSection = [self numberOfItemsPerSectionForGroupType:obj.type];
+         NSUInteger numberOfSections = (NSUInteger)ceil((CGFloat)numberOfItems / (CGFloat)itemsPerSection);
+         {
+             totalSections += numberOfSections;
+         }
+         {
+             for (NSInteger i = 0; i < numberOfSections; i++) {
+                 [numberOfItemsArray addObject:@(itemsPerSection)];
+             }
+         }
+         {
+             for (NSInteger i = 0; i < numberOfSections; i++) {
+                 [groupIndexes addObject:@(idx)];
+             }
+         }
+         {
+             [groupSections addObject:@(numberOfSections)];
+         }
+     }];
+    self.totalSections = totalSections;
+    self.numberOfItems = numberOfItemsArray;
+    self.groupIndexes = groupIndexes;
+    self.groupSections = groupSections;
+}
 
 #pragma mark - UICollectionViewDataSource
 
@@ -76,27 +122,7 @@
         return 1;
     }
     else {
-        NSMutableDictionary *rowCountCache = [NSMutableDictionary dictionary];
-        NSMutableDictionary *sectionGroupIndexCache = [NSMutableDictionary dictionary];
-        __block NSUInteger totalSections = 0;
-        [self.eventHandler.keyboardInteractor.emotionGroupInteractors
-         enumerateObjectsUsingBlock:^(PEBEmotionGroupInteractor *obj, NSUInteger idx, BOOL *stop) {
-             NSUInteger numberOfItems = [obj.emotionItemInteractors count];
-             NSUInteger itemsPerSection = [self numberOfItemsPerSectionForGroupType:obj.type];
-             NSUInteger numberOfSections = (NSUInteger)ceil((CGFloat)numberOfItems / (CGFloat)itemsPerSection);
-             totalSections += numberOfSections;
-             {
-                 NSInteger position = totalSections-1;
-                 do {
-                     [rowCountCache setObject:@(itemsPerSection) forKey:@(position)];
-                     [sectionGroupIndexCache setObject:@(idx) forKey:@(position)];
-                     position--;
-                 } while (rowCountCache[@(position)] == nil && position >= 0);
-             }
-         }];
-        self.rowCountCacheDictionary = rowCountCache;
-        self.sectionGroupIndexCacheDictionary = sectionGroupIndexCache;
-        return totalSections;
+        return self.totalSections;
     }
 }
 
@@ -105,30 +131,31 @@
         return [self.eventHandler.keyboardInteractor.emotionGroupInteractors count];
     }
     else {
-        return [self.rowCountCacheDictionary[@(section)] integerValue];
+        if (section < [self.numberOfItems count]) {
+            return [self.numberOfItems[section] integerValue];
+        }
+        else {
+            return 0;
+        }
     }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (collectionView == self.groupCollectionView) {
-        __block NSInteger itemPage = NSIntegerMax;
-        PEBEmotionGroupInteractor *groupInteractor;
-        if (indexPath.row < [self.eventHandler.keyboardInteractor.emotionGroupInteractors count]) {
-            groupInteractor = self.eventHandler.keyboardInteractor.emotionGroupInteractors[indexPath.row];
-        }
-        [self.sectionGroupIndexCacheDictionary
-         enumerateKeysAndObjectsUsingBlock:^(NSNumber *key, NSNumber *obj, BOOL *stop) {
-             NSInteger sectionIndex = [key integerValue];
-             NSInteger groupIndex = [obj integerValue];
-             if (groupIndex < [self.eventHandler.keyboardInteractor.emotionGroupInteractors count] &&
-                 self.eventHandler.keyboardInteractor.emotionGroupInteractors[groupIndex] == groupInteractor) {
-                 itemPage = MIN(itemPage, sectionIndex);
-             }
-         }];
+        __block NSInteger itemPage = 0;
+        NSInteger groupIndex = indexPath.row;
+        [self.groupSections enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            if (idx >= groupIndex) {
+                *stop = YES;
+            }
+            else {
+                itemPage += [obj integerValue];
+            }
+        }];
         if (itemPage < NSIntegerMax && itemPage >= 0) {
             [self.itemCollectionView
              setContentOffset:CGPointMake(CGRectGetWidth(self.itemCollectionView.bounds) * itemPage, 0)
-             animated:NO];
+             animated:YES];
         }
     }
     else if (collectionView == self.itemCollectionView) {
@@ -177,10 +204,11 @@
 }
 
 - (PEBEmotionGroupInteractor *)emotionGroupForIndexPath:(NSIndexPath *)indexPath {
-    NSUInteger groupInteractorIndex = [self.sectionGroupIndexCacheDictionary[@(indexPath.section)]
-                                       integerValue];
-    if (groupInteractorIndex < [self.eventHandler.keyboardInteractor.emotionGroupInteractors count]) {
-        return self.eventHandler.keyboardInteractor.emotionGroupInteractors[groupInteractorIndex];
+    if (indexPath.section < [self.groupIndexes count]) {
+        NSInteger groupInteractorIndex = [self.groupIndexes[indexPath.section] integerValue];
+        if (groupInteractorIndex < [self.eventHandler.keyboardInteractor.emotionGroupInteractors count]) {
+            return self.eventHandler.keyboardInteractor.emotionGroupInteractors[groupInteractorIndex];
+        }
     }
     return nil;
 }
@@ -242,28 +270,40 @@
 
 #pragma mark - PageControl
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self updateGroupSelection];
-    [self updatePageControl];
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (scrollView == self.itemCollectionView) {
+        [self updateGroupSelection];
+        [self updatePageControl];
+    }
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    if (scrollView == self.itemCollectionView) {
+        [self updateGroupSelection];
+        [self updatePageControl];
+    }
 }
 
 - (void)updatePageControl {
     NSInteger numberOfPages = 0, currentPage = 0;
     NSInteger sectionIndex = (NSInteger)(self.itemCollectionView.contentOffset.x / CGRectGetWidth(self.itemCollectionView.bounds));
-    {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:sectionIndex];
-        PEBEmotionGroupInteractor *groupInteractor = [self emotionGroupForIndexPath:indexPath];
-        NSInteger numberOfItemsPerPage = [self numberOfItemsPerSectionForGroupType:groupInteractor.type];
-        numberOfPages = (NSInteger)ceil((CGFloat)[groupInteractor.emotionItemInteractors count] / (CGFloat)numberOfItemsPerPage);
+    if (sectionIndex < [self.groupIndexes count]) {
+        NSInteger groupIndex = [self.groupIndexes[sectionIndex] integerValue];
+        if (groupIndex < [self.groupSections count]) {
+            numberOfPages = [self.groupSections[groupIndex] integerValue];
+        }
     }
-    {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:sectionIndex];
-        PEBEmotionGroupInteractor *groupInteractor = [self emotionGroupForIndexPath:indexPath];
-        NSIndexPath *previousIndexPath = [NSIndexPath indexPathForRow:0 inSection:sectionIndex-1];
-        while ([self emotionGroupForIndexPath:previousIndexPath] == groupInteractor &&
-               previousIndexPath.section >= 0) {
-            currentPage++;
-            previousIndexPath = [NSIndexPath indexPathForRow:0 inSection:previousIndexPath.section-1];
+    NSInteger currentIndex = sectionIndex - 1;
+    if (sectionIndex < [self.groupIndexes count]) {
+        NSInteger groupIndex = [self.groupIndexes[sectionIndex] integerValue];
+        while (currentIndex >= 0 && currentIndex < [self.groupIndexes count]) {
+            if ([self.groupIndexes[currentIndex] integerValue] != groupIndex) {
+                break;
+            }
+            else {
+                currentPage++;
+                currentIndex--;
+            }
         }
     }
     self.pageControl.numberOfPages = numberOfPages;
@@ -273,13 +313,12 @@
 
 - (void)updateGroupSelection {
     NSInteger sectionIndex = (NSInteger)(self.itemCollectionView.contentOffset.x / CGRectGetWidth(self.itemCollectionView.bounds));
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:sectionIndex];
-    PEBEmotionGroupInteractor *groupInteractor = [self emotionGroupForIndexPath:indexPath];
-    NSUInteger groupIndex = [self.eventHandler.keyboardInteractor.emotionGroupInteractors
-                             indexOfObject:groupInteractor];
-    [self.groupCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:groupIndex inSection:0]
-                                           animated:YES
-                                     scrollPosition:UICollectionViewScrollPositionNone];
+    if (sectionIndex < [self.groupIndexes count]) {
+        NSInteger groupIndex = [self.groupIndexes[sectionIndex] integerValue];
+        [self.groupCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:groupIndex inSection:0]
+                                               animated:YES
+                                         scrollPosition:UICollectionViewScrollPositionNone];
+    }
 }
 
 @end
