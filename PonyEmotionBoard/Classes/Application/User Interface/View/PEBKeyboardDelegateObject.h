@@ -20,10 +20,6 @@
 
 @property (nonatomic, weak) id<UITextInput> textInputContainer;
 
-- (void)calculates;
-
-- (void)updatePageControl;
-
-- (void)updateGroupSelection;
+- (void)updateView;
 
 @end

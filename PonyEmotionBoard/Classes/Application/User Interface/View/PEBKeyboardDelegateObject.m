@@ -49,6 +49,14 @@
 
 #pragma mark - Calculations
 
+- (void)updateView {
+    [self calculates];
+    [self.itemCollectionView reloadData];
+    [self.groupCollectionView reloadData];
+    [self updateGroupSelection];
+    [self updatePageControl];
+}
+
 /**
  *  各种计算
  */
@@ -265,6 +273,16 @@
     }
     else {
         return CGSizeZero;
+    }
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    if (collectionView == self.itemCollectionView) {
+        CGFloat insetWidth = (NSInteger)CGRectGetWidth(self.itemCollectionView.bounds) % 40 / 2.0 + 20;
+        return UIEdgeInsetsMake(20, insetWidth, 26, insetWidth);
+    }
+    else {
+        return UIEdgeInsetsZero;
     }
 }
 

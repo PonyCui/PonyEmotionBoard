@@ -208,8 +208,6 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="216"/>
                     <connections>
-                        <outlet property="groupCollectionView" destination="ZNc-HZ-egv" id="eP8-RT-2r4"/>
-                        <outlet property="itemCollectionView" destination="qAW-Xv-KLx" id="kjR-MB-46P"/>
                         <outlet property="keyboardDelegates" destination="wbI-m6-SNB" id="8ff-RU-e9o"/>
                         <outlet property="sendButton" destination="hSS-RY-d44" id="nBX-9z-suy"/>
                     </connections>

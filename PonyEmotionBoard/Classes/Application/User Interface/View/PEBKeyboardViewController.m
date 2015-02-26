@@ -16,10 +16,6 @@
 
 @property (nonatomic, weak) NSLayoutConstraint *viewBottomSpaceConstraint;
 
-@property (weak, nonatomic) IBOutlet UICollectionView *groupCollectionView;
-
-@property (weak, nonatomic) IBOutlet UICollectionView *itemCollectionView;
-
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 
 @property (nonatomic, assign) BOOL wasEditing;
@@ -34,13 +30,7 @@
     [super viewDidLoad];
     [self configureSendButtonReactiveCocoa];
     [self.eventHandler updateView];
-    [self setSendButtonEnabled:YES];//Fix me:Should Remove
     // Do any additional setup after loading the view.
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self configureItemCollectitonViewInsets];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,12 +56,6 @@
         self.viewBottomSpaceConstraint = [constraints lastObject];
         [self.view.superview addConstraints:constraints];
     }
-}
-
-- (void)configureItemCollectitonViewInsets {
-    CGFloat insetWidth = (NSInteger)CGRectGetWidth(self.view.bounds) % 40 / 2.0 + 20;
-    [(UICollectionViewFlowLayout *)self.itemCollectionView.collectionViewLayout
-     setSectionInset:UIEdgeInsetsMake(20, insetWidth, 26, insetWidth)];
 }
 
 #pragma mark - isPresented
@@ -107,18 +91,8 @@
 
 #pragma mark - Update View
 
-- (void)updateGroupCollectionView {
-    [self.keyboardDelegates calculates];
-    [self.groupCollectionView reloadData];
-    [self.keyboardDelegates updateGroupSelection];
-    [self.keyboardDelegates updatePageControl];
-}
-
-- (void)updateItemCollectionView {
-    [self.keyboardDelegates calculates];
-    [self.itemCollectionView reloadData];
-    [self.keyboardDelegates updateGroupSelection];
-    [self.keyboardDelegates updatePageControl];
+- (void)updateView {
+    [self.keyboardDelegates updateView];
 }
 
 #pragma mark - Setter 

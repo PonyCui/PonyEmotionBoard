@@ -22,8 +22,7 @@
 }
 
 - (void)updateView {
-    [self.userInterface updateGroupCollectionView];
-    [self.userInterface updateItemCollectionView];
+    [self.userInterface updateView];
 }
 
 @end

@@ -20,8 +20,6 @@
 
 - (void)configureViewLayouts;
 
-- (void)updateGroupCollectionView;
-
-- (void)updateItemCollectionView;
+- (void)updateView;
 
 @end
