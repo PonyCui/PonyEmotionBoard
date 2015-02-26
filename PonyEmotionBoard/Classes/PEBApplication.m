@@ -40,14 +40,15 @@
     return self;
 }
 
-- (void)setEditing:(BOOL)isEditing forTextField:(UITextField *)textField {
-    id textFieldViewController = [textField nextResponder];
+- (void)setEditing:(BOOL)isEditing textInputContainer:(UIView<UITextInput> *)textInputContainer {
+    id textFieldViewController = textInputContainer;
     do {
-        textFieldViewController = [textFieldViewController nextResponder];
-    } while (![textFieldViewController isKindOfClass:[UIViewController class]]);
+        textFieldViewController = [(UIView *)textFieldViewController nextResponder];
+    } while (![textFieldViewController isKindOfClass:[UIViewController class]] &&
+             textFieldViewController != nil);
     if (isEditing) {
         [self.core.wireframe presentEmotionBoardToViewController:textFieldViewController
-                                                    forTextField:textField];
+                                              textInputContainer:textInputContainer];
     }
 }
 

@@ -12,6 +12,6 @@
 @interface PEBWireframe : NSObject
 
 - (void)presentEmotionBoardToViewController:(UIViewController *)viewController
-                               forTextField:(UITextField *)textField;
+                         textInputContainer:(id<UITextInput>)textInputContainer;
 
 @end

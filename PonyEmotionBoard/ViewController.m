@@ -28,7 +28,7 @@
 }
 
 - (IBAction)handleEmotionButtonTapped:(id)sender {
-    [[PEBApplication sharedInstance] setEditing:YES forTextField:self.textField];
+    [[PEBApplication sharedInstance] setEditing:YES textInputContainer:self.textField];
 }
 
 @end

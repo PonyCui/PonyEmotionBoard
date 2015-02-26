@@ -13,7 +13,7 @@
 @implementation PEBWireframe
 
 - (void)presentEmotionBoardToViewController:(UIViewController *)viewController
-                               forTextField:(UITextField *)textField{
+                         textInputContainer:(id<UITextInput>)textInputContainer{
     __block PEBKeyboardViewController *keyboardViewController;
     [viewController.childViewControllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         if ([obj isKindOfClass:[PEBKeyboardViewController class]]) {
@@ -26,6 +26,7 @@
         [viewController.view addSubview:keyboardViewController.view];
         [keyboardViewController configureViewLayouts];
     }
+    keyboardViewController.textInputContainer = textInputContainer;
     [keyboardViewController setIsPresented:YES];
 }
 

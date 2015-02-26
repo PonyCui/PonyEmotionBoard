@@ -33,4 +33,10 @@
  */
 @property (nonatomic, copy) NSString *emotionText;
 
+/**
+ *  表情数据获取地址
+ *  非nil则表示，表情使用图片形式进行数据传输
+ */
+@property (nonatomic, copy) NSString *emotionURLString;
+
 @end

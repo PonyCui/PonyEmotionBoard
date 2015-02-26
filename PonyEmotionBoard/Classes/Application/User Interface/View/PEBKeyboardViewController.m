@@ -198,6 +198,12 @@
              animated:NO];
         }
     }
+    else if (collectionView == self.itemCollectionView) {
+        PEBEmotionItemCollectionViewCell *cell =
+        (PEBEmotionItemCollectionViewCell *)[self collectionView:collectionView
+                                          cellForItemAtIndexPath:indexPath];
+        [cell.eventHandler insertTextToTextInputContainer:self.textInputContainer];
+    }
 }
 
 #pragma mark - Emotion View Layout Calculations

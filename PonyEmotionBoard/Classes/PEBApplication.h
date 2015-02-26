@@ -13,6 +13,6 @@
 
 + (PEBApplication *)sharedInstance;
 
-- (void)setEditing:(BOOL)isEditing forTextField:(UITextField *)textField;
+- (void)setEditing:(BOOL)isEditing textInputContainer:(UIView<UITextInput> *)textInputContainer;
 
 @end
