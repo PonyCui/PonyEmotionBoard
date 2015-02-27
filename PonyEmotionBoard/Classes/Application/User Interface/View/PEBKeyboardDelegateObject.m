@@ -170,7 +170,7 @@
         PEBEmotionItemCollectionViewCell *cell =
         (PEBEmotionItemCollectionViewCell *)[self collectionView:collectionView
                                           cellForItemAtIndexPath:indexPath];
-        [cell.eventHandler insertTextToTextInputContainer:self.textInputContainer];
+        [cell.eventHandler insertTextToTextField:self.textField];
     }
 }
 

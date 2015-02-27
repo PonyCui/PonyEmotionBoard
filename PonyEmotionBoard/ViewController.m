@@ -13,12 +13,16 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
+@property (nonatomic, strong) PEBKeyboardViewController *keyboardViewController;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.keyboardViewController = [[PEBApplication sharedInstance] addKeyboardViewControllerToViewController:self
+                                                                                               withTextField:self.textField];
     self.textField.delegate = self;
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -29,17 +33,18 @@
 }
 
 - (IBAction)handleEmotionButtonTapped:(id)sender {
-    [[PEBApplication sharedInstance] setEditing:YES
-                           parentViewController:self
-                             textInputContainer:self.textField];
+    [self.textField resignFirstResponder];
+    [self.keyboardViewController setIsPresenting:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self.textField resignFirstResponder];
-    [[PEBApplication sharedInstance] setEditing:NO
-                           parentViewController:self
-                             textInputContainer:nil];
+    [self.keyboardViewController setIsPresenting:NO];
     return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self.keyboardViewController setIsPresenting:NO];
 }
 
 @end

@@ -41,28 +41,10 @@
     return self;
 }
 
-- (BOOL)isEditingWithParentViewController:(UIViewController *)parentViewController {
-    __block BOOL isEditing = NO;
-    [[parentViewController childViewControllers] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if ([obj isKindOfClass:[PEBKeyboardViewController class]]) {
-            isEditing = [(PEBKeyboardViewController *)obj isPresented];
-        }
-    }];
-    return isEditing;
+- (PEBKeyboardViewController *)addKeyboardViewControllerToViewController:(UIViewController *)viewController
+                                                           withTextField:(UITextField *)textField {
+    return [self.core.wireframe presentEmotionBoardToViewController:viewController withTextField:textField];
 }
 
-- (void)setEditing:(BOOL)isEditing
-        parentViewController:(UIViewController *)parentViewController
-        textInputContainer:(UIView<UITextInput> *)textInputContainer {
-    if (isEditing) {
-        [self.core.wireframe
-         presentEmotionBoardToViewController:parentViewController
-         textInputContainer:textInputContainer];
-    }
-    else {
-        [self.core.wireframe
-         dismissEmotionBoardFromViewController:parentViewController];
-    }
-}
 
 @end

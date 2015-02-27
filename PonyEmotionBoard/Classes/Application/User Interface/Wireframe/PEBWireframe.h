@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class PEBKeyboardViewController;
+
 @interface PEBWireframe : NSObject
 
-- (void)presentEmotionBoardToViewController:(UIViewController *)viewController
-                         textInputContainer:(id<UITextInput>)textInputContainer;
-
-- (void)dismissEmotionBoardFromViewController:(UIViewController *)viewController;
+- (PEBKeyboardViewController *)presentEmotionBoardToViewController:(UIViewController *)viewController
+                                                     withTextField:(UITextField *)textField;
 
 @end

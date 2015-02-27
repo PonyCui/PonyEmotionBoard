@@ -12,15 +12,11 @@
 #import "PEBKeyboardInteractor.h"
 #import "PEBKeyboardDelegateObject.h"
 
-#define kPCUEndEditingNotification @"kPCUEndEditingNotification"
-
 @interface PEBKeyboardViewController ()
 
 @property (nonatomic, weak) NSLayoutConstraint *viewBottomSpaceConstraint;
 
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
-
-@property (nonatomic, assign) BOOL wasEditing;
 
 @property (strong, nonatomic) IBOutlet PEBKeyboardDelegateObject *keyboardDelegates;
 
@@ -31,8 +27,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureSendButtonReactiveCocoa];
-    [self configureKeyboardNotifications];
-    [self configurePCUEndEditingNotifications];
     [self.eventHandler updateView];
     // Do any additional setup after loading the view.
 }
@@ -62,95 +56,27 @@
     }
 }
 
-#pragma mark - Observe Real Keyboard
-
-- (void)configureKeyboardNotifications {
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(handleRealKeyboardWillShowNotificaiton:)
-     name:UIKeyboardWillShowNotification
-     object:nil];
-}
-
-- (void)handleRealKeyboardWillShowNotificaiton:(NSNotification *)sender {
-    if (sender.userInfo[UIKeyboardFrameBeginUserInfoKey] != nil) {
-        //It's real
-        _isPresented = NO;
-        self.viewBottomSpaceConstraint.constant = -216;
-        [self.view layoutIfNeeded];
-    }
-}
-
-#pragma mark - Observe PCUApplication endEditing Notification
-
-- (void)configurePCUEndEditingNotifications {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(handleEndEditingNotification)
-                                                 name:kPCUEndEditingNotification
-                                               object:nil];
-}
-
-- (void)handleEndEditingNotification {
-    if (self.isPresented) {
-        self.wasEditing = NO;
-        self.isPresented = NO;
-    }
-}
-
 #pragma mark - isPresented
 
-- (void)setIsPresented:(BOOL)isPresented {
-    _isPresented = isPresented;
+- (void)setIsPresenting:(BOOL)isPresented {
+    _isPresenting = isPresented;
     isPresented ?
     [self performSelector:@selector(present) withObject:nil afterDelay:0.001] :
     [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.001];
 }
 
 - (void)present {
-    if ([(UIView *)self.textInputContainer isFirstResponder]) {
-        self.wasEditing = YES;
-        [(UIView *)self.textInputContainer resignFirstResponder];
-        [self performSelector:@selector(present) withObject:nil afterDelay:0.50];
-        return;
-    }
     self.viewBottomSpaceConstraint.constant = 0.0;
     [UIView animateWithDuration:0.25 animations:^{
         [self.view layoutIfNeeded];
     }];
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:UIKeyboardWillShowNotification
-     object:nil
-     userInfo:@{
-                UIKeyboardFrameEndUserInfoKey :
-                    [NSValue valueWithCGRect:CGRectMake(0,
-                                                        0,
-                                                        0,
-                                                        216.0)]
-                }];
 }
 
 - (void)dismiss {
-    if (self.wasEditing) {
-        self.wasEditing = NO;
-        [(UIView *)self.textInputContainer becomeFirstResponder];
-        self.viewBottomSpaceConstraint.constant = -216.0;
-    }
-    else {
-        self.viewBottomSpaceConstraint.constant = -216.0;
-        [UIView animateWithDuration:0.25 animations:^{
-            [self.view layoutIfNeeded];
-        }];
-        [[NSNotificationCenter defaultCenter]
-         postNotificationName:UIKeyboardWillHideNotification
-         object:nil
-         userInfo:@{
-                    UIKeyboardFrameEndUserInfoKey :
-                        [NSValue valueWithCGRect:CGRectMake(0,
-                                                            0,
-                                                            0,
-                                                            216.0)]
-                    }];
-    }
+    self.viewBottomSpaceConstraint.constant = -216.0;
+    [UIView animateWithDuration:0.25 animations:^{
+        [self.view layoutIfNeeded];
+    }];
 }
 
 #pragma mark - Update View
@@ -166,23 +92,22 @@
     self.keyboardDelegates.eventHandler = _eventHandler;
 }
 
-- (void)setTextInputContainer:(UITextField<UITextInput> *)textInputContainer {
-    _textInputContainer = textInputContainer;
-    self.keyboardDelegates.textInputContainer = textInputContainer;
+- (void)setTextField:(UITextField *)textField {
+    _textField = textField;
+    self.keyboardDelegates.textField = textField;
 }
 
 #pragma mark - Send Button
 
 - (void)configureSendButtonReactiveCocoa {
-    [RACObserve(self, textInputContainer.text) subscribeNext:^(NSString *x) {
+    [RACObserve(self, textField.text) subscribeNext:^(NSString *x) {
         [self setSendButtonEnabled:x.length];
     }];
 }
 
 - (IBAction)handleSendButtonTapped:(id)sender {
-    if ([self.textInputContainer isKindOfClass:[UITextField class]]) {
-        [[(UITextField *)self.textInputContainer delegate]
-         textFieldShouldReturn:(UITextField *)self.textInputContainer];
+    if ([self.textField isKindOfClass:[UITextField class]]) {
+        [[self.textField delegate] textFieldShouldReturn:self.textField];
     }
 }
 

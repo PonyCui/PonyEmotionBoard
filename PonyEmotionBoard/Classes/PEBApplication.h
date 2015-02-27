@@ -8,15 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "PEBKeyboardViewController.h"
 
 @interface PEBApplication : NSObject
 
 + (PEBApplication *)sharedInstance;
 
-- (BOOL)isEditingWithParentViewController:(UIViewController *)parentViewController;
-
-- (void)setEditing:(BOOL)isEditing
-        parentViewController:(UIViewController *)parentViewController
-        textInputContainer:(UIView<UITextInput> *)textInputContainer;
+- (PEBKeyboardViewController *)addKeyboardViewControllerToViewController:(UIViewController *)viewController
+                                                           withTextField:(UITextField *)textField;
 
 @end

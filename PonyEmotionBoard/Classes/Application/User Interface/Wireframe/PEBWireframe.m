@@ -12,34 +12,14 @@
 
 @implementation PEBWireframe
 
-- (void)presentEmotionBoardToViewController:(UIViewController *)viewController
-                         textInputContainer:(id<UITextInput>)textInputContainer{
-    __block PEBKeyboardViewController *keyboardViewController;
-    [viewController.childViewControllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if ([obj isKindOfClass:[PEBKeyboardViewController class]]) {
-            keyboardViewController = obj;
-        }
-    }];
-    if (keyboardViewController == nil) {
-        keyboardViewController = [self keyboardViewController];
-        [viewController addChildViewController:keyboardViewController];
-        [viewController.view addSubview:keyboardViewController.view];
-        [keyboardViewController configureViewLayouts];
-    }
-    keyboardViewController.textInputContainer = textInputContainer;
-    [keyboardViewController setIsPresented:YES];
-}
-
-- (void)dismissEmotionBoardFromViewController:(UIViewController *)viewController {
-    __block PEBKeyboardViewController *keyboardViewController;
-    [viewController.childViewControllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if ([obj isKindOfClass:[PEBKeyboardViewController class]]) {
-            keyboardViewController = obj;
-        }
-    }];
-    if (keyboardViewController != nil) {
-        [keyboardViewController setIsPresented:NO];
-    }
+- (PEBKeyboardViewController *)presentEmotionBoardToViewController:(UIViewController *)viewController
+                                                     withTextField:(UITextField *)textField{
+    PEBKeyboardViewController *keyboardViewController = [self keyboardViewController];
+    [viewController addChildViewController:keyboardViewController];
+    [viewController.view addSubview:keyboardViewController.view];
+    [keyboardViewController configureViewLayouts];
+    keyboardViewController.textField = textField;
+    return keyboardViewController;
 }
 
 #pragma mark - Getter

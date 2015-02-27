@@ -17,6 +17,6 @@
 
 @property (nonatomic, strong) PEBEmotionItemInteractor *itemInteractor;
 
-- (void)insertTextToTextInputContainer:(id<UITextInput>)container;
+- (void)insertTextToTextField:(UITextField *)textField;
 
 @end

@@ -23,14 +23,13 @@
     [self updateView];
 }
 
--(void)insertTextToTextInputContainer:(id<UITextInput>)container {
+- (void)insertTextToTextField:(UITextField *)textField {
     if (self.itemInteractor.emotionText != nil) {
-        NSString *text = [(UITextField *)container text];
-        [(UITextField *)container setText:[text stringByAppendingString:self.itemInteractor.emotionText]];
-//        [container insertText:self.itemInteractor.emotionText];
+        NSString *text = [textField text];
+        [textField setText:[text stringByAppendingString:self.itemInteractor.emotionText]];
     }
     else if(self.itemInteractor.emotionURLString != nil) {
-
+        
     }
 }
 
