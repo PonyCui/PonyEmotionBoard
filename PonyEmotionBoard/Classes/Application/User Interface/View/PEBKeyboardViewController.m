@@ -110,6 +110,11 @@
     if ([self.textField isKindOfClass:[UITextField class]]) {
         [[self.textField delegate] textFieldShouldReturn:self.textField];
     }
+    else if ([self.textField isKindOfClass:[UITextView class]]) {
+        [[(UITextView *)self.textField delegate] textView:(UITextView *)self.textField
+                                  shouldChangeTextInRange:NSMakeRange(0, 0)
+                                          replacementText:@"\n"];
+    }
 }
 
 - (void)setSendButtonEnabled:(BOOL)enabled {
