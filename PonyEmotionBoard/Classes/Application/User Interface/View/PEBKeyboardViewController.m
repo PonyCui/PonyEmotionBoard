@@ -54,6 +54,7 @@
         self.viewBottomSpaceConstraint = [constraints lastObject];
         [self.view.superview addConstraints:constraints];
     }
+    [self.view layoutIfNeeded];
 }
 
 #pragma mark - isPresented
