@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>identifier</key>
+	<string>Emoji</string>
+	<key>type</key>
+	<integer>1</integer>
+	<key>titleString</key>
+	<string>系统表情</string>
+	<key>iconURLString</key>
+	<string>EmotionsEmojiHL</string>
+	<key>emotions</key>
+	<array>
+		<dict>
+			<key>identifier</key>
+			<string>EmojiExpression1</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>titleString</key>
+			<string>开心</string>
+			<key>localURLString</key>
+			<string>Expression_1</string>
+		</dict>
+	</array>
+</dict>
+</plist>

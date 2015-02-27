@@ -7,22 +7,71 @@
 //
 
 #import "PEBEmotionItemInteractor.h"
+#import "PEBElement.h"
+#import <AFNetworking/AFNetworking.h>
+
+@interface PEBEmotionItemInteractor ()
+
+@property (nonatomic, strong) PEBElement *element;
+
+@end
 
 @implementation PEBEmotionItemInteractor
 
-- (UIImage *)iconImage {
-    if (_iconImage == nil) {
-        _iconImage = [UIImage imageNamed:[NSString stringWithFormat:@"Expression_%u", arc4random()%80+1]];
+- (instancetype)initWithElement:(PEBElement *)element {
+    self = [super init];
+    if (self) {
+        self.element = element;
+        [self sendAsyncIconImageRequest];
     }
-    return _iconImage;
+    return self;
+}
+
+- (void)sendAsyncIconImageRequest {
+    if (self.element.remoteURLString != nil) {
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.element.remoteURLString]
+                                                 cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                             timeoutInterval:15.0];
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        operation.responseSerializer.acceptableContentTypes = nil;
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            if ([responseObject isKindOfClass:[NSData class]]) {
+                UIImage *image = [UIImage imageWithData:responseObject];
+                self.iconImage = image;
+            }
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+        }];
+        [[[AFHTTPRequestOperationManager manager] operationQueue] addOperation:operation];
+    }
+    else if(self.element.localURLString != nil) {
+        self.iconImage = [UIImage imageNamed:self.element.localURLString];
+    }
 }
 
 - (NSString *)emotionText {
-    return @"[开心]";
+    if (self.element.type == PEBElementTypeEmojiSimilar) {
+        return [NSString stringWithFormat:@"[%@]", self.element.titleString];
+    }
+    else if (self.element.type == PEBElementTypeEmoji) {
+        return self.element.titleString;
+    }
+    else {
+        return nil;
+    }
 }
 
 - (NSString *)emotionDescription {
-    return @"开心";
+    return self.element.titleString;
+}
+
+- (NSString *)collectionText {
+    if (self.element.type == PEBElementTypeAnimate) {
+        return self.element.titleString;
+    }
+    else {
+        return nil;
+    }
 }
 
 @end

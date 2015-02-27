@@ -4,6 +4,7 @@
 target 'PonyEmotionBoard' do
 
 pod "ReactiveCocoa"
+pod "AFNetworking"
 
 end
 

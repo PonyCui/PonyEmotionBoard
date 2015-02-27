@@ -8,6 +8,7 @@
 
 #import "PEBCore.h"
 #import "PEBWireframe.h"
+#import "PEBEmotionManager.h"
 
 @implementation PEBCore
 
@@ -22,6 +23,7 @@
 
 - (void)configureDependencies {
     _wireframe = [[PEBWireframe alloc] init];
+    _emotionManager = [[PEBEmotionManager alloc] init];
 }
 
 @end

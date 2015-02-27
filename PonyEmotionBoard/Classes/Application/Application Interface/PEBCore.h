@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "PEBDefines.h"
 
-@class PEBWireframe;
+@class PEBWireframe, PEBEmotionManager;
 
 @interface PEBCore : NSObject
 
 @property (nonatomic, readonly) PEBWireframe *wireframe;
+
+@property (nonatomic, readonly) PEBEmotionManager *emotionManager;
 
 @end

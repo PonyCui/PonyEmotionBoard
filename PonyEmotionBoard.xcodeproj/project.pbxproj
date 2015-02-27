@@ -1,1706 +1,735 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>1FE4139161E8645935EC0B68</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>6364A5B81A9EC68800409722</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBKeyboardDelegateObject.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6364A5B91A9EC68800409722</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBKeyboardDelegateObject.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6364A5BA1A9EC68800409722</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6364A5B91A9EC68800409722</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>64F6C8AC10548BAC0C814805</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A54AFE29AE6C07ED15FE62C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>999E945622CF8FC04F6D6E48</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A54AFE29AE6C07ED15FE62C1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A54AFE29AE6C07ED15FE62C1</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-PonyEmotionBoard.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>AC8F485AA6DD58D9246FB98F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-PonyEmotionBoard/Pods-PonyEmotionBoard-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>B0099B131540A0E61C404ABB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E2628217CB017D5D326DD3A8</string>
-				<string>E526C7F81DACE20A834A6FBF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E2628217CB017D5D326DD3A8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-PonyEmotionBoard.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-PonyEmotionBoard/Pods-PonyEmotionBoard.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E526C7F81DACE20A834A6FBF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-PonyEmotionBoard.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-PonyEmotionBoard/Pods-PonyEmotionBoard.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBA41A9ABD4C005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBAF1A9ABD4D005FCB07</string>
-				<string>F0EDFBC91A9ABD4D005FCB07</string>
-				<string>F0EDFBAE1A9ABD4D005FCB07</string>
-				<string>B0099B131540A0E61C404ABB</string>
-				<string>999E945622CF8FC04F6D6E48</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBA51A9ABD4D005FCB07</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>PEB</string>
-				<key>LastUpgradeCheck</key>
-				<string>0600</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>&#23828; &#26126;&#36745;</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>F0EDFBAC1A9ABD4D005FCB07</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.0</string>
-					</dict>
-					<key>F0EDFBC51A9ABD4D005FCB07</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.0</string>
-						<key>TestTargetID</key>
-						<string>F0EDFBAC1A9ABD4D005FCB07</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>F0EDFBA81A9ABD4D005FCB07</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>F0EDFBA41A9ABD4C005FCB07</string>
-			<key>productRefGroup</key>
-			<string>F0EDFBAE1A9ABD4D005FCB07</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>F0EDFBAC1A9ABD4D005FCB07</string>
-				<string>F0EDFBC51A9ABD4D005FCB07</string>
-			</array>
-		</dict>
-		<key>F0EDFBA81A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F0EDFBCE1A9ABD4D005FCB07</string>
-				<string>F0EDFBCF1A9ABD4D005FCB07</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>F0EDFBA91A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F0EDFC0F1A9D770F005FCB07</string>
-				<string>F0EDFBB91A9ABD4D005FCB07</string>
-				<string>F0EDFBF41A9AC598005FCB07</string>
-				<string>F0EDFBF01A9AC529005FCB07</string>
-				<string>F0EDFBFA1A9C1A16005FCB07</string>
-				<string>F0EDFC031A9C1CE2005FCB07</string>
-				<string>F0EDFC091A9C294F005FCB07</string>
-				<string>F0EDFBB61A9ABD4D005FCB07</string>
-				<string>F0EDFBDE1A9AC312005FCB07</string>
-				<string>F0EDFBFD1A9C1A23005FCB07</string>
-				<string>6364A5BA1A9EC68800409722</string>
-				<string>F0EDFC0C1A9D76F5005FCB07</string>
-				<string>F0EDFBB31A9ABD4D005FCB07</string>
-				<string>F0EDFC001A9C1C3E005FCB07</string>
-				<string>F0EDFBF71A9AD3B9005FCB07</string>
-				<string>F0EDFBE41A9AC35B005FCB07</string>
-				<string>F0EDFC061A9C26EA005FCB07</string>
-				<string>F0EDFBE11A9AC345005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F0EDFBAA1A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>64F6C8AC10548BAC0C814805</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F0EDFBAB1A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F0EDFBBC1A9ABD4D005FCB07</string>
-				<string>F0EDFBC11A9ABD4D005FCB07</string>
-				<string>F0EDFBBE1A9ABD4D005FCB07</string>
-				<string>F0EDFBEB1A9AC4FC005FCB07</string>
-				<string>F0EDFBED1A9AC50E005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F0EDFBAC1A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>F0EDFBD01A9ABD4D005FCB07</string>
-			<key>buildPhases</key>
-			<array>
-				<string>1FE4139161E8645935EC0B68</string>
-				<string>F0EDFBA91A9ABD4D005FCB07</string>
-				<string>F0EDFBAA1A9ABD4D005FCB07</string>
-				<string>F0EDFBAB1A9ABD4D005FCB07</string>
-				<string>AC8F485AA6DD58D9246FB98F</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PonyEmotionBoard</string>
-			<key>productName</key>
-			<string>PonyEmotionBoard</string>
-			<key>productReference</key>
-			<string>F0EDFBAD1A9ABD4D005FCB07</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>F0EDFBAD1A9ABD4D005FCB07</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PonyEmotionBoard.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F0EDFBAE1A9ABD4D005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBAD1A9ABD4D005FCB07</string>
-				<string>F0EDFBC61A9ABD4D005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBAF1A9ABD4D005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBE91A9AC4DD005FCB07</string>
-				<string>F0EDFBD61A9AC2F0005FCB07</string>
-				<string>F0EDFBB41A9ABD4D005FCB07</string>
-				<string>F0EDFBB51A9ABD4D005FCB07</string>
-				<string>F0EDFBB71A9ABD4D005FCB07</string>
-				<string>F0EDFBB81A9ABD4D005FCB07</string>
-				<string>F0EDFBBA1A9ABD4D005FCB07</string>
-				<string>F0EDFBBD1A9ABD4D005FCB07</string>
-				<string>F0EDFBBF1A9ABD4D005FCB07</string>
-				<string>F0EDFBB01A9ABD4D005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PonyEmotionBoard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBB01A9ABD4D005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBB11A9ABD4D005FCB07</string>
-				<string>F0EDFBB21A9ABD4D005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBB11A9ABD4D005FCB07</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBB21A9ABD4D005FCB07</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBB31A9ABD4D005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBB21A9ABD4D005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBB41A9ABD4D005FCB07</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBB51A9ABD4D005FCB07</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBB61A9ABD4D005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBB51A9ABD4D005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBB71A9ABD4D005FCB07</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBB81A9ABD4D005FCB07</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBB91A9ABD4D005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBB81A9ABD4D005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBBA1A9ABD4D005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBBB1A9ABD4D005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBBB1A9ABD4D005FCB07</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBBC1A9ABD4D005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBBA1A9ABD4D005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBBD1A9ABD4D005FCB07</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBBE1A9ABD4D005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBBD1A9ABD4D005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBBF1A9ABD4D005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBC01A9ABD4D005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBC01A9ABD4D005FCB07</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBC11A9ABD4D005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBBF1A9ABD4D005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBC21A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F0EDFBCD1A9ABD4D005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F0EDFBC31A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F0EDFBC41A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F0EDFBC51A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>F0EDFBD31A9ABD4D005FCB07</string>
-			<key>buildPhases</key>
-			<array>
-				<string>F0EDFBC21A9ABD4D005FCB07</string>
-				<string>F0EDFBC31A9ABD4D005FCB07</string>
-				<string>F0EDFBC41A9ABD4D005FCB07</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>F0EDFBC81A9ABD4D005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PonyEmotionBoardTests</string>
-			<key>productName</key>
-			<string>PonyEmotionBoardTests</string>
-			<key>productReference</key>
-			<string>F0EDFBC61A9ABD4D005FCB07</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>F0EDFBC61A9ABD4D005FCB07</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PonyEmotionBoardTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F0EDFBC71A9ABD4D005FCB07</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>F0EDFBA51A9ABD4D005FCB07</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>F0EDFBAC1A9ABD4D005FCB07</string>
-			<key>remoteInfo</key>
-			<string>PonyEmotionBoard</string>
-		</dict>
-		<key>F0EDFBC81A9ABD4D005FCB07</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>F0EDFBAC1A9ABD4D005FCB07</string>
-			<key>targetProxy</key>
-			<string>F0EDFBC71A9ABD4D005FCB07</string>
-		</dict>
-		<key>F0EDFBC91A9ABD4D005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBCC1A9ABD4D005FCB07</string>
-				<string>F0EDFBCA1A9ABD4D005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PonyEmotionBoardTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBCA1A9ABD4D005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBCB1A9ABD4D005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBCB1A9ABD4D005FCB07</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBCC1A9ABD4D005FCB07</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PonyEmotionBoardTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBCD1A9ABD4D005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBCC1A9ABD4D005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBCE1A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F0EDFBCF1A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>F0EDFBD01A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F0EDFBD11A9ABD4D005FCB07</string>
-				<string>F0EDFBD21A9ABD4D005FCB07</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>F0EDFBD11A9ABD4D005FCB07</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>E2628217CB017D5D326DD3A8</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PonyEmotionBoard/Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F0EDFBD21A9ABD4D005FCB07</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>E526C7F81DACE20A834A6FBF</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PonyEmotionBoard/Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>F0EDFBD31A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F0EDFBD41A9ABD4D005FCB07</string>
-				<string>F0EDFBD51A9ABD4D005FCB07</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>F0EDFBD41A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>PonyEmotionBoardTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/PonyEmotionBoard.app/PonyEmotionBoard</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F0EDFBD51A9ABD4D005FCB07</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>PonyEmotionBoardTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/PonyEmotionBoard.app/PonyEmotionBoard</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>F0EDFBD61A9AC2F0005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBD71A9AC2F0005FCB07</string>
-				<string>F0EDFBDB1A9AC2F0005FCB07</string>
-				<string>F0EDFBDC1A9AC312005FCB07</string>
-				<string>F0EDFBDD1A9AC312005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Classes</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBD71A9AC2F0005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBD81A9AC2F0005FCB07</string>
-				<string>F0EDFBD91A9AC2F0005FCB07</string>
-				<string>F0EDFBDA1A9AC2F0005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Application</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBD81A9AC2F0005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBDF1A9AC345005FCB07</string>
-				<string>F0EDFBE01A9AC345005FCB07</string>
-				<string>F0EDFBE21A9AC35B005FCB07</string>
-				<string>F0EDFBE31A9AC35B005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Application Interface</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBD91A9AC2F0005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Application Logic</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBDA1A9AC2F0005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBE51A9AC498005FCB07</string>
-				<string>F0EDFBE61A9AC498005FCB07</string>
-				<string>F0EDFBE71A9AC498005FCB07</string>
-				<string>F0EDFBE81A9AC498005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>User Interface</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBDB1A9AC2F0005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBF11A9AC584005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Common</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBDC1A9AC312005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBApplication.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBDD1A9AC312005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBApplication.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBDE1A9AC312005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBDD1A9AC312005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBDF1A9AC345005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBCore.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBE01A9AC345005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBCore.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBE11A9AC345005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBE01A9AC345005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBE21A9AC35B005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBDefines.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBE31A9AC35B005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBDefines.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBE41A9AC35B005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBE31A9AC35B005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBE51A9AC498005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBFB1A9C1A23005FCB07</string>
-				<string>F0EDFBFC1A9C1A23005FCB07</string>
-				<string>F0EDFBFE1A9C1C3E005FCB07</string>
-				<string>F0EDFBFF1A9C1C3E005FCB07</string>
-				<string>F0EDFC011A9C1CE2005FCB07</string>
-				<string>F0EDFC021A9C1CE2005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Interactor</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBE61A9AC498005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBF81A9C1A16005FCB07</string>
-				<string>F0EDFBF91A9C1A16005FCB07</string>
-				<string>F0EDFC071A9C294F005FCB07</string>
-				<string>F0EDFC081A9C294F005FCB07</string>
-				<string>F0EDFC0D1A9D770F005FCB07</string>
-				<string>F0EDFC0E1A9D770F005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Presenter</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBE71A9AC498005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBF51A9AD3B9005FCB07</string>
-				<string>F0EDFBF61A9AD3B9005FCB07</string>
-				<string>6364A5B81A9EC68800409722</string>
-				<string>6364A5B91A9EC68800409722</string>
-				<string>F0EDFC041A9C26EA005FCB07</string>
-				<string>F0EDFC051A9C26EA005FCB07</string>
-				<string>F0EDFC0A1A9D76F5005FCB07</string>
-				<string>F0EDFC0B1A9D76F5005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>View</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBE81A9AC498005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBEE1A9AC529005FCB07</string>
-				<string>F0EDFBEF1A9AC529005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Wireframe</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBE91A9AC4DD005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBEA1A9AC4FC005FCB07</string>
-				<string>F0EDFBEC1A9AC50E005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBEA1A9AC4FC005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>path</key>
-			<string>PEBStoryBoard.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBEB1A9AC4FC005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBEA1A9AC4FC005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBEC1A9AC50E005FCB07</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>PEBImages.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBED1A9AC50E005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBEC1A9AC50E005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBEE1A9AC529005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBWireframe.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBEF1A9AC529005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBWireframe.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBF01A9AC529005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBEF1A9AC529005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBF11A9AC584005FCB07</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F0EDFBF21A9AC598005FCB07</string>
-				<string>F0EDFBF31A9AC598005FCB07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Categories</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBF21A9AC598005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBApplication+PEBCore.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBF31A9AC598005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBApplication+PEBCore.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBF41A9AC598005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBF31A9AC598005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBF51A9AD3B9005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBKeyboardViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBF61A9AD3B9005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBKeyboardViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBF71A9AD3B9005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBF61A9AD3B9005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBF81A9C1A16005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBKeyboardPresenter.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBF91A9C1A16005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBKeyboardPresenter.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBFA1A9C1A16005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBF91A9C1A16005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBFB1A9C1A23005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBKeyboardInteractor.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBFC1A9C1A23005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBKeyboardInteractor.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBFD1A9C1A23005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBFC1A9C1A23005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFBFE1A9C1C3E005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBEmotionGroupInteractor.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFBFF1A9C1C3E005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBEmotionGroupInteractor.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFC001A9C1C3E005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFBFF1A9C1C3E005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFC011A9C1CE2005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBEmotionItemInteractor.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFC021A9C1CE2005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBEmotionItemInteractor.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFC031A9C1CE2005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFC021A9C1CE2005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFC041A9C26EA005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBEmotionGroupCollectionViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFC051A9C26EA005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBEmotionGroupCollectionViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFC061A9C26EA005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFC051A9C26EA005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFC071A9C294F005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBEmotionGroupPresenter.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFC081A9C294F005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBEmotionGroupPresenter.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFC091A9C294F005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFC081A9C294F005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFC0A1A9D76F5005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBEmotionItemCollectionViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFC0B1A9D76F5005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBEmotionItemCollectionViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFC0C1A9D76F5005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFC0B1A9D76F5005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0EDFC0D1A9D770F005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEBEmotionItemPresenter.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFC0E1A9D770F005FCB07</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEBEmotionItemPresenter.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F0EDFC0F1A9D770F005FCB07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F0EDFC0E1A9D770F005FCB07</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>F0EDFBA51A9ABD4D005FCB07</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6364A5BA1A9EC68800409722 /* PEBKeyboardDelegateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364A5B91A9EC68800409722 /* PEBKeyboardDelegateObject.m */; };
+		63C19A361AA0642D00ACE468 /* PEBPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C19A351AA0642D00ACE468 /* PEBPacket.m */; };
+		63C19A391AA0647900ACE468 /* PEBElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C19A381AA0647900ACE468 /* PEBElement.m */; };
+		63C19A3C1AA0721600ACE468 /* PEBEmotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C19A3B1AA0721600ACE468 /* PEBEmotionManager.m */; };
+		63C19A3F1AA07F1D00ACE468 /* PEBEmojiEmotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C19A3E1AA07F1D00ACE468 /* PEBEmojiEmotionManager.m */; };
+		63C19A411AA07F6A00ACE468 /* PEBEmojiPacket.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63C19A401AA07F6A00ACE468 /* PEBEmojiPacket.plist */; };
+		64F6C8AC10548BAC0C814805 /* libPods-PonyEmotionBoard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A54AFE29AE6C07ED15FE62C1 /* libPods-PonyEmotionBoard.a */; };
+		F0EDFBB31A9ABD4D005FCB07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBB21A9ABD4D005FCB07 /* main.m */; };
+		F0EDFBB61A9ABD4D005FCB07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBB51A9ABD4D005FCB07 /* AppDelegate.m */; };
+		F0EDFBB91A9ABD4D005FCB07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBB81A9ABD4D005FCB07 /* ViewController.m */; };
+		F0EDFBBC1A9ABD4D005FCB07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EDFBBA1A9ABD4D005FCB07 /* Main.storyboard */; };
+		F0EDFBBE1A9ABD4D005FCB07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0EDFBBD1A9ABD4D005FCB07 /* Images.xcassets */; };
+		F0EDFBC11A9ABD4D005FCB07 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EDFBBF1A9ABD4D005FCB07 /* LaunchScreen.xib */; };
+		F0EDFBCD1A9ABD4D005FCB07 /* PonyEmotionBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBCC1A9ABD4D005FCB07 /* PonyEmotionBoardTests.m */; };
+		F0EDFBDE1A9AC312005FCB07 /* PEBApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBDD1A9AC312005FCB07 /* PEBApplication.m */; };
+		F0EDFBE11A9AC345005FCB07 /* PEBCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBE01A9AC345005FCB07 /* PEBCore.m */; };
+		F0EDFBE41A9AC35B005FCB07 /* PEBDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBE31A9AC35B005FCB07 /* PEBDefines.m */; };
+		F0EDFBEB1A9AC4FC005FCB07 /* PEBStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EDFBEA1A9AC4FC005FCB07 /* PEBStoryBoard.storyboard */; };
+		F0EDFBED1A9AC50E005FCB07 /* PEBImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0EDFBEC1A9AC50E005FCB07 /* PEBImages.xcassets */; };
+		F0EDFBF01A9AC529005FCB07 /* PEBWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBEF1A9AC529005FCB07 /* PEBWireframe.m */; };
+		F0EDFBF41A9AC598005FCB07 /* PEBApplication+PEBCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBF31A9AC598005FCB07 /* PEBApplication+PEBCore.m */; };
+		F0EDFBF71A9AD3B9005FCB07 /* PEBKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBF61A9AD3B9005FCB07 /* PEBKeyboardViewController.m */; };
+		F0EDFBFA1A9C1A16005FCB07 /* PEBKeyboardPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBF91A9C1A16005FCB07 /* PEBKeyboardPresenter.m */; };
+		F0EDFBFD1A9C1A23005FCB07 /* PEBKeyboardInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBFC1A9C1A23005FCB07 /* PEBKeyboardInteractor.m */; };
+		F0EDFC001A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFBFF1A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.m */; };
+		F0EDFC031A9C1CE2005FCB07 /* PEBEmotionItemInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFC021A9C1CE2005FCB07 /* PEBEmotionItemInteractor.m */; };
+		F0EDFC061A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFC051A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.m */; };
+		F0EDFC091A9C294F005FCB07 /* PEBEmotionGroupPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFC081A9C294F005FCB07 /* PEBEmotionGroupPresenter.m */; };
+		F0EDFC0C1A9D76F5005FCB07 /* PEBEmotionItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFC0B1A9D76F5005FCB07 /* PEBEmotionItemCollectionViewCell.m */; };
+		F0EDFC0F1A9D770F005FCB07 /* PEBEmotionItemPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EDFC0E1A9D770F005FCB07 /* PEBEmotionItemPresenter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F0EDFBC71A9ABD4D005FCB07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0EDFBA51A9ABD4D005FCB07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0EDFBAC1A9ABD4D005FCB07;
+			remoteInfo = PonyEmotionBoard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6364A5B81A9EC68800409722 /* PEBKeyboardDelegateObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBKeyboardDelegateObject.h; sourceTree = "<group>"; };
+		6364A5B91A9EC68800409722 /* PEBKeyboardDelegateObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBKeyboardDelegateObject.m; sourceTree = "<group>"; };
+		63C19A341AA0642D00ACE468 /* PEBPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBPacket.h; sourceTree = "<group>"; };
+		63C19A351AA0642D00ACE468 /* PEBPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBPacket.m; sourceTree = "<group>"; };
+		63C19A371AA0647900ACE468 /* PEBElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBElement.h; sourceTree = "<group>"; };
+		63C19A381AA0647900ACE468 /* PEBElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBElement.m; sourceTree = "<group>"; };
+		63C19A3A1AA0721600ACE468 /* PEBEmotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBEmotionManager.h; sourceTree = "<group>"; };
+		63C19A3B1AA0721600ACE468 /* PEBEmotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBEmotionManager.m; sourceTree = "<group>"; };
+		63C19A3D1AA07F1D00ACE468 /* PEBEmojiEmotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBEmojiEmotionManager.h; sourceTree = "<group>"; };
+		63C19A3E1AA07F1D00ACE468 /* PEBEmojiEmotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBEmojiEmotionManager.m; sourceTree = "<group>"; };
+		63C19A401AA07F6A00ACE468 /* PEBEmojiPacket.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PEBEmojiPacket.plist; sourceTree = "<group>"; };
+		A54AFE29AE6C07ED15FE62C1 /* libPods-PonyEmotionBoard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PonyEmotionBoard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2628217CB017D5D326DD3A8 /* Pods-PonyEmotionBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PonyEmotionBoard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PonyEmotionBoard/Pods-PonyEmotionBoard.debug.xcconfig"; sourceTree = "<group>"; };
+		E526C7F81DACE20A834A6FBF /* Pods-PonyEmotionBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PonyEmotionBoard.release.xcconfig"; path = "Pods/Target Support Files/Pods-PonyEmotionBoard/Pods-PonyEmotionBoard.release.xcconfig"; sourceTree = "<group>"; };
+		F0EDFBAD1A9ABD4D005FCB07 /* PonyEmotionBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PonyEmotionBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0EDFBB11A9ABD4D005FCB07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0EDFBB21A9ABD4D005FCB07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F0EDFBB41A9ABD4D005FCB07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F0EDFBB51A9ABD4D005FCB07 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F0EDFBB71A9ABD4D005FCB07 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F0EDFBB81A9ABD4D005FCB07 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F0EDFBBB1A9ABD4D005FCB07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F0EDFBBD1A9ABD4D005FCB07 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F0EDFBC01A9ABD4D005FCB07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F0EDFBC61A9ABD4D005FCB07 /* PonyEmotionBoardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PonyEmotionBoardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0EDFBCB1A9ABD4D005FCB07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0EDFBCC1A9ABD4D005FCB07 /* PonyEmotionBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PonyEmotionBoardTests.m; sourceTree = "<group>"; };
+		F0EDFBDC1A9AC312005FCB07 /* PEBApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBApplication.h; sourceTree = "<group>"; };
+		F0EDFBDD1A9AC312005FCB07 /* PEBApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBApplication.m; sourceTree = "<group>"; };
+		F0EDFBDF1A9AC345005FCB07 /* PEBCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBCore.h; sourceTree = "<group>"; };
+		F0EDFBE01A9AC345005FCB07 /* PEBCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBCore.m; sourceTree = "<group>"; };
+		F0EDFBE21A9AC35B005FCB07 /* PEBDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBDefines.h; sourceTree = "<group>"; };
+		F0EDFBE31A9AC35B005FCB07 /* PEBDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBDefines.m; sourceTree = "<group>"; };
+		F0EDFBEA1A9AC4FC005FCB07 /* PEBStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PEBStoryBoard.storyboard; sourceTree = "<group>"; };
+		F0EDFBEC1A9AC50E005FCB07 /* PEBImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PEBImages.xcassets; sourceTree = "<group>"; };
+		F0EDFBEE1A9AC529005FCB07 /* PEBWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBWireframe.h; sourceTree = "<group>"; };
+		F0EDFBEF1A9AC529005FCB07 /* PEBWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBWireframe.m; sourceTree = "<group>"; };
+		F0EDFBF21A9AC598005FCB07 /* PEBApplication+PEBCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PEBApplication+PEBCore.h"; sourceTree = "<group>"; };
+		F0EDFBF31A9AC598005FCB07 /* PEBApplication+PEBCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PEBApplication+PEBCore.m"; sourceTree = "<group>"; };
+		F0EDFBF51A9AD3B9005FCB07 /* PEBKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBKeyboardViewController.h; sourceTree = "<group>"; };
+		F0EDFBF61A9AD3B9005FCB07 /* PEBKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBKeyboardViewController.m; sourceTree = "<group>"; };
+		F0EDFBF81A9C1A16005FCB07 /* PEBKeyboardPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBKeyboardPresenter.h; sourceTree = "<group>"; };
+		F0EDFBF91A9C1A16005FCB07 /* PEBKeyboardPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBKeyboardPresenter.m; sourceTree = "<group>"; };
+		F0EDFBFB1A9C1A23005FCB07 /* PEBKeyboardInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBKeyboardInteractor.h; sourceTree = "<group>"; };
+		F0EDFBFC1A9C1A23005FCB07 /* PEBKeyboardInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBKeyboardInteractor.m; sourceTree = "<group>"; };
+		F0EDFBFE1A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBEmotionGroupInteractor.h; sourceTree = "<group>"; };
+		F0EDFBFF1A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBEmotionGroupInteractor.m; sourceTree = "<group>"; };
+		F0EDFC011A9C1CE2005FCB07 /* PEBEmotionItemInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBEmotionItemInteractor.h; sourceTree = "<group>"; };
+		F0EDFC021A9C1CE2005FCB07 /* PEBEmotionItemInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBEmotionItemInteractor.m; sourceTree = "<group>"; };
+		F0EDFC041A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBEmotionGroupCollectionViewCell.h; sourceTree = "<group>"; };
+		F0EDFC051A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBEmotionGroupCollectionViewCell.m; sourceTree = "<group>"; };
+		F0EDFC071A9C294F005FCB07 /* PEBEmotionGroupPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBEmotionGroupPresenter.h; sourceTree = "<group>"; };
+		F0EDFC081A9C294F005FCB07 /* PEBEmotionGroupPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBEmotionGroupPresenter.m; sourceTree = "<group>"; };
+		F0EDFC0A1A9D76F5005FCB07 /* PEBEmotionItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBEmotionItemCollectionViewCell.h; sourceTree = "<group>"; };
+		F0EDFC0B1A9D76F5005FCB07 /* PEBEmotionItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBEmotionItemCollectionViewCell.m; sourceTree = "<group>"; };
+		F0EDFC0D1A9D770F005FCB07 /* PEBEmotionItemPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBEmotionItemPresenter.h; sourceTree = "<group>"; };
+		F0EDFC0E1A9D770F005FCB07 /* PEBEmotionItemPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBEmotionItemPresenter.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0EDFBAA1A9ABD4D005FCB07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64F6C8AC10548BAC0C814805 /* libPods-PonyEmotionBoard.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0EDFBC31A9ABD4D005FCB07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63C19A311AA063B800ACE468 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				63C19A321AA063B800ACE468 /* Entity */,
+				63C19A331AA063B800ACE468 /* Manager */,
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		63C19A321AA063B800ACE468 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				63C19A341AA0642D00ACE468 /* PEBPacket.h */,
+				63C19A351AA0642D00ACE468 /* PEBPacket.m */,
+				63C19A371AA0647900ACE468 /* PEBElement.h */,
+				63C19A381AA0647900ACE468 /* PEBElement.m */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		63C19A331AA063B800ACE468 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				63C19A3A1AA0721600ACE468 /* PEBEmotionManager.h */,
+				63C19A3B1AA0721600ACE468 /* PEBEmotionManager.m */,
+				63C19A3D1AA07F1D00ACE468 /* PEBEmojiEmotionManager.h */,
+				63C19A3E1AA07F1D00ACE468 /* PEBEmojiEmotionManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		999E945622CF8FC04F6D6E48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A54AFE29AE6C07ED15FE62C1 /* libPods-PonyEmotionBoard.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0099B131540A0E61C404ABB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2628217CB017D5D326DD3A8 /* Pods-PonyEmotionBoard.debug.xcconfig */,
+				E526C7F81DACE20A834A6FBF /* Pods-PonyEmotionBoard.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F0EDFBA41A9ABD4C005FCB07 = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBAF1A9ABD4D005FCB07 /* PonyEmotionBoard */,
+				F0EDFBC91A9ABD4D005FCB07 /* PonyEmotionBoardTests */,
+				F0EDFBAE1A9ABD4D005FCB07 /* Products */,
+				B0099B131540A0E61C404ABB /* Pods */,
+				999E945622CF8FC04F6D6E48 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F0EDFBAE1A9ABD4D005FCB07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBAD1A9ABD4D005FCB07 /* PonyEmotionBoard.app */,
+				F0EDFBC61A9ABD4D005FCB07 /* PonyEmotionBoardTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0EDFBAF1A9ABD4D005FCB07 /* PonyEmotionBoard */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBE91A9AC4DD005FCB07 /* Resources */,
+				F0EDFBD61A9AC2F0005FCB07 /* Classes */,
+				F0EDFBB41A9ABD4D005FCB07 /* AppDelegate.h */,
+				F0EDFBB51A9ABD4D005FCB07 /* AppDelegate.m */,
+				F0EDFBB71A9ABD4D005FCB07 /* ViewController.h */,
+				F0EDFBB81A9ABD4D005FCB07 /* ViewController.m */,
+				F0EDFBBA1A9ABD4D005FCB07 /* Main.storyboard */,
+				F0EDFBBD1A9ABD4D005FCB07 /* Images.xcassets */,
+				F0EDFBBF1A9ABD4D005FCB07 /* LaunchScreen.xib */,
+				F0EDFBB01A9ABD4D005FCB07 /* Supporting Files */,
+			);
+			path = PonyEmotionBoard;
+			sourceTree = "<group>";
+		};
+		F0EDFBB01A9ABD4D005FCB07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBB11A9ABD4D005FCB07 /* Info.plist */,
+				F0EDFBB21A9ABD4D005FCB07 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0EDFBC91A9ABD4D005FCB07 /* PonyEmotionBoardTests */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBCC1A9ABD4D005FCB07 /* PonyEmotionBoardTests.m */,
+				F0EDFBCA1A9ABD4D005FCB07 /* Supporting Files */,
+			);
+			path = PonyEmotionBoardTests;
+			sourceTree = "<group>";
+		};
+		F0EDFBCA1A9ABD4D005FCB07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBCB1A9ABD4D005FCB07 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0EDFBD61A9AC2F0005FCB07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBD71A9AC2F0005FCB07 /* Application */,
+				F0EDFBDB1A9AC2F0005FCB07 /* Common */,
+				F0EDFBDC1A9AC312005FCB07 /* PEBApplication.h */,
+				F0EDFBDD1A9AC312005FCB07 /* PEBApplication.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F0EDFBD71A9AC2F0005FCB07 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				63C19A311AA063B800ACE468 /* Application Logic */,
+				F0EDFBD81A9AC2F0005FCB07 /* Application Interface */,
+				F0EDFBDA1A9AC2F0005FCB07 /* User Interface */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F0EDFBD81A9AC2F0005FCB07 /* Application Interface */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBDF1A9AC345005FCB07 /* PEBCore.h */,
+				F0EDFBE01A9AC345005FCB07 /* PEBCore.m */,
+				F0EDFBE21A9AC35B005FCB07 /* PEBDefines.h */,
+				F0EDFBE31A9AC35B005FCB07 /* PEBDefines.m */,
+			);
+			path = "Application Interface";
+			sourceTree = "<group>";
+		};
+		F0EDFBDA1A9AC2F0005FCB07 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBE51A9AC498005FCB07 /* Interactor */,
+				F0EDFBE61A9AC498005FCB07 /* Presenter */,
+				F0EDFBE71A9AC498005FCB07 /* View */,
+				F0EDFBE81A9AC498005FCB07 /* Wireframe */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		F0EDFBDB1A9AC2F0005FCB07 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBF11A9AC584005FCB07 /* Categories */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F0EDFBE51A9AC498005FCB07 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBFB1A9C1A23005FCB07 /* PEBKeyboardInteractor.h */,
+				F0EDFBFC1A9C1A23005FCB07 /* PEBKeyboardInteractor.m */,
+				F0EDFBFE1A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.h */,
+				F0EDFBFF1A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.m */,
+				F0EDFC011A9C1CE2005FCB07 /* PEBEmotionItemInteractor.h */,
+				F0EDFC021A9C1CE2005FCB07 /* PEBEmotionItemInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F0EDFBE61A9AC498005FCB07 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBF81A9C1A16005FCB07 /* PEBKeyboardPresenter.h */,
+				F0EDFBF91A9C1A16005FCB07 /* PEBKeyboardPresenter.m */,
+				F0EDFC071A9C294F005FCB07 /* PEBEmotionGroupPresenter.h */,
+				F0EDFC081A9C294F005FCB07 /* PEBEmotionGroupPresenter.m */,
+				F0EDFC0D1A9D770F005FCB07 /* PEBEmotionItemPresenter.h */,
+				F0EDFC0E1A9D770F005FCB07 /* PEBEmotionItemPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F0EDFBE71A9AC498005FCB07 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBF51A9AD3B9005FCB07 /* PEBKeyboardViewController.h */,
+				F0EDFBF61A9AD3B9005FCB07 /* PEBKeyboardViewController.m */,
+				6364A5B81A9EC68800409722 /* PEBKeyboardDelegateObject.h */,
+				6364A5B91A9EC68800409722 /* PEBKeyboardDelegateObject.m */,
+				F0EDFC041A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.h */,
+				F0EDFC051A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.m */,
+				F0EDFC0A1A9D76F5005FCB07 /* PEBEmotionItemCollectionViewCell.h */,
+				F0EDFC0B1A9D76F5005FCB07 /* PEBEmotionItemCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0EDFBE81A9AC498005FCB07 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBEE1A9AC529005FCB07 /* PEBWireframe.h */,
+				F0EDFBEF1A9AC529005FCB07 /* PEBWireframe.m */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		F0EDFBE91A9AC4DD005FCB07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBEA1A9AC4FC005FCB07 /* PEBStoryBoard.storyboard */,
+				F0EDFBEC1A9AC50E005FCB07 /* PEBImages.xcassets */,
+				63C19A401AA07F6A00ACE468 /* PEBEmojiPacket.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F0EDFBF11A9AC584005FCB07 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F0EDFBF21A9AC598005FCB07 /* PEBApplication+PEBCore.h */,
+				F0EDFBF31A9AC598005FCB07 /* PEBApplication+PEBCore.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0EDFBAC1A9ABD4D005FCB07 /* PonyEmotionBoard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0EDFBD01A9ABD4D005FCB07 /* Build configuration list for PBXNativeTarget "PonyEmotionBoard" */;
+			buildPhases = (
+				1FE4139161E8645935EC0B68 /* Check Pods Manifest.lock */,
+				F0EDFBA91A9ABD4D005FCB07 /* Sources */,
+				F0EDFBAA1A9ABD4D005FCB07 /* Frameworks */,
+				F0EDFBAB1A9ABD4D005FCB07 /* Resources */,
+				AC8F485AA6DD58D9246FB98F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PonyEmotionBoard;
+			productName = PonyEmotionBoard;
+			productReference = F0EDFBAD1A9ABD4D005FCB07 /* PonyEmotionBoard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F0EDFBC51A9ABD4D005FCB07 /* PonyEmotionBoardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0EDFBD31A9ABD4D005FCB07 /* Build configuration list for PBXNativeTarget "PonyEmotionBoardTests" */;
+			buildPhases = (
+				F0EDFBC21A9ABD4D005FCB07 /* Sources */,
+				F0EDFBC31A9ABD4D005FCB07 /* Frameworks */,
+				F0EDFBC41A9ABD4D005FCB07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0EDFBC81A9ABD4D005FCB07 /* PBXTargetDependency */,
+			);
+			name = PonyEmotionBoardTests;
+			productName = PonyEmotionBoardTests;
+			productReference = F0EDFBC61A9ABD4D005FCB07 /* PonyEmotionBoardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0EDFBA51A9ABD4D005FCB07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PEB;
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "崔 明辉";
+				TargetAttributes = {
+					F0EDFBAC1A9ABD4D005FCB07 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					F0EDFBC51A9ABD4D005FCB07 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = F0EDFBAC1A9ABD4D005FCB07;
+					};
+				};
+			};
+			buildConfigurationList = F0EDFBA81A9ABD4D005FCB07 /* Build configuration list for PBXProject "PonyEmotionBoard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0EDFBA41A9ABD4C005FCB07;
+			productRefGroup = F0EDFBAE1A9ABD4D005FCB07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0EDFBAC1A9ABD4D005FCB07 /* PonyEmotionBoard */,
+				F0EDFBC51A9ABD4D005FCB07 /* PonyEmotionBoardTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0EDFBAB1A9ABD4D005FCB07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0EDFBBC1A9ABD4D005FCB07 /* Main.storyboard in Resources */,
+				63C19A411AA07F6A00ACE468 /* PEBEmojiPacket.plist in Resources */,
+				F0EDFBC11A9ABD4D005FCB07 /* LaunchScreen.xib in Resources */,
+				F0EDFBBE1A9ABD4D005FCB07 /* Images.xcassets in Resources */,
+				F0EDFBEB1A9AC4FC005FCB07 /* PEBStoryBoard.storyboard in Resources */,
+				F0EDFBED1A9AC50E005FCB07 /* PEBImages.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0EDFBC41A9ABD4D005FCB07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FE4139161E8645935EC0B68 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AC8F485AA6DD58D9246FB98F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PonyEmotionBoard/Pods-PonyEmotionBoard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0EDFBA91A9ABD4D005FCB07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63C19A361AA0642D00ACE468 /* PEBPacket.m in Sources */,
+				F0EDFC0F1A9D770F005FCB07 /* PEBEmotionItemPresenter.m in Sources */,
+				F0EDFBB91A9ABD4D005FCB07 /* ViewController.m in Sources */,
+				F0EDFBF41A9AC598005FCB07 /* PEBApplication+PEBCore.m in Sources */,
+				63C19A391AA0647900ACE468 /* PEBElement.m in Sources */,
+				F0EDFBF01A9AC529005FCB07 /* PEBWireframe.m in Sources */,
+				F0EDFBFA1A9C1A16005FCB07 /* PEBKeyboardPresenter.m in Sources */,
+				F0EDFC031A9C1CE2005FCB07 /* PEBEmotionItemInteractor.m in Sources */,
+				63C19A3C1AA0721600ACE468 /* PEBEmotionManager.m in Sources */,
+				F0EDFC091A9C294F005FCB07 /* PEBEmotionGroupPresenter.m in Sources */,
+				F0EDFBB61A9ABD4D005FCB07 /* AppDelegate.m in Sources */,
+				F0EDFBDE1A9AC312005FCB07 /* PEBApplication.m in Sources */,
+				63C19A3F1AA07F1D00ACE468 /* PEBEmojiEmotionManager.m in Sources */,
+				F0EDFBFD1A9C1A23005FCB07 /* PEBKeyboardInteractor.m in Sources */,
+				6364A5BA1A9EC68800409722 /* PEBKeyboardDelegateObject.m in Sources */,
+				F0EDFC0C1A9D76F5005FCB07 /* PEBEmotionItemCollectionViewCell.m in Sources */,
+				F0EDFBB31A9ABD4D005FCB07 /* main.m in Sources */,
+				F0EDFC001A9C1C3E005FCB07 /* PEBEmotionGroupInteractor.m in Sources */,
+				F0EDFBF71A9AD3B9005FCB07 /* PEBKeyboardViewController.m in Sources */,
+				F0EDFBE41A9AC35B005FCB07 /* PEBDefines.m in Sources */,
+				F0EDFC061A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.m in Sources */,
+				F0EDFBE11A9AC345005FCB07 /* PEBCore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0EDFBC21A9ABD4D005FCB07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0EDFBCD1A9ABD4D005FCB07 /* PonyEmotionBoardTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F0EDFBC81A9ABD4D005FCB07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0EDFBAC1A9ABD4D005FCB07 /* PonyEmotionBoard */;
+			targetProxy = F0EDFBC71A9ABD4D005FCB07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F0EDFBBA1A9ABD4D005FCB07 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0EDFBBB1A9ABD4D005FCB07 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F0EDFBBF1A9ABD4D005FCB07 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0EDFBC01A9ABD4D005FCB07 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F0EDFBCE1A9ABD4D005FCB07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0EDFBCF1A9ABD4D005FCB07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0EDFBD11A9ABD4D005FCB07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2628217CB017D5D326DD3A8 /* Pods-PonyEmotionBoard.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = PonyEmotionBoard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F0EDFBD21A9ABD4D005FCB07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E526C7F81DACE20A834A6FBF /* Pods-PonyEmotionBoard.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = PonyEmotionBoard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F0EDFBD41A9ABD4D005FCB07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PonyEmotionBoardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PonyEmotionBoard.app/PonyEmotionBoard";
+			};
+			name = Debug;
+		};
+		F0EDFBD51A9ABD4D005FCB07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PonyEmotionBoardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PonyEmotionBoard.app/PonyEmotionBoard";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0EDFBA81A9ABD4D005FCB07 /* Build configuration list for PBXProject "PonyEmotionBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0EDFBCE1A9ABD4D005FCB07 /* Debug */,
+				F0EDFBCF1A9ABD4D005FCB07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0EDFBD01A9ABD4D005FCB07 /* Build configuration list for PBXNativeTarget "PonyEmotionBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0EDFBD11A9ABD4D005FCB07 /* Debug */,
+				F0EDFBD21A9ABD4D005FCB07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0EDFBD31A9ABD4D005FCB07 /* Build configuration list for PBXNativeTarget "PonyEmotionBoardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0EDFBD41A9ABD4D005FCB07 /* Debug */,
+				F0EDFBD51A9ABD4D005FCB07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F0EDFBA51A9ABD4D005FCB07 /* Project object */;
+}

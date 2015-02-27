@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class PEBElement;
+
 @interface PEBEmotionItemInteractor : NSObject
 
 /**
@@ -38,5 +40,7 @@
  *  非nil则表示，表情使用图片形式进行数据传输
  */
 @property (nonatomic, copy) NSString *emotionURLString;
+
+- (instancetype)initWithElement:(PEBElement *)element;
 
 @end

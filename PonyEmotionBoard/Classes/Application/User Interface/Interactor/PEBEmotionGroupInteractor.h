@@ -10,10 +10,12 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, PEBEmotionGroupType) {
-    PEBEmotionGroupTypeEmoji,
-    PEBEmotionGroupTypeCustom,
-    PEBEmotionGroupTypeBand
+    PEBEmotionGroupTypeEmoji = 1,
+    PEBEmotionGroupTypeCustom = 2,
+    PEBEmotionGroupTypeBand = 3
 };
+
+@class PEBPacket;
 
 @interface PEBEmotionGroupInteractor : NSObject
 
@@ -25,5 +27,7 @@ typedef NS_ENUM(NSUInteger, PEBEmotionGroupType) {
 @property (nonatomic, copy) NSArray *emotionItemInteractors;
 
 @property (nonatomic, strong) UIImage *iconImage;
+
+- (instancetype)initWithPacket:(PEBPacket *)packet;
 
 @end
