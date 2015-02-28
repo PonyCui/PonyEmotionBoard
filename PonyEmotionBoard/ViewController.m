@@ -13,6 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
+@property (weak, nonatomic) IBOutlet UILabel *outputLabel;
+
 @property (nonatomic, strong) PEBKeyboardViewController *keyboardViewController;
 
 @end
@@ -38,8 +40,10 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self.textField resignFirstResponder];
-    [self.keyboardViewController setIsPresenting:NO];
+    self.outputLabel.text = self.textField.text;
+    self.outputLabel.attributedText = [[PEBApplication sharedInstance]
+                                       emotionAttributedStringWithString:self.textField.text];
+    self.textField.text = @"";
     return YES;
 }
 

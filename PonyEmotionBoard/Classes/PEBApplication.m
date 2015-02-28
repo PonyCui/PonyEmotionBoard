@@ -10,6 +10,7 @@
 #import "PEBCore.h"
 #import "PEBWireframe.h"
 #import "PEBKeyboardViewController.h"
+#import "PEBEmotionManager.h"
 
 @interface PEBApplication ()
 
@@ -44,6 +45,15 @@
 - (PEBKeyboardViewController *)addKeyboardViewControllerToViewController:(UIViewController *)viewController
                                                            withTextField:(UITextField *)textField {
     return [self.core.wireframe presentEmotionBoardToViewController:viewController withTextField:textField];
+}
+
+- (NSAttributedString *)emotionAttributedStringWithString:(NSString *)argString {
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:argString];
+    return [self emotionAttributedStringWithAttributedString:attributedString];
+}
+
+- (NSAttributedString *)emotionAttributedStringWithAttributedString:(NSAttributedString *)argAttributedString {
+    return [self.core.emotionManager addEmotionsToAttributedString:argAttributedString];
 }
 
 

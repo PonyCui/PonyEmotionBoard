@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface PEBEmotionManager : NSObject
 
 - (void)findAvailabelPackets:(void (^)(NSArray /**PEBPacket**/ *))completionBlock;
+
+- (NSAttributedString *)addEmotionsToAttributedString:(NSAttributedString *)attributedString;
 
 @end

@@ -17,4 +17,8 @@
 - (PEBKeyboardViewController *)addKeyboardViewControllerToViewController:(UIViewController *)viewController
                                                            withTextField:(UITextField *)textField;
 
+- (NSAttributedString *)emotionAttributedStringWithString:(NSString *)argString;
+
+- (NSAttributedString *)emotionAttributedStringWithAttributedString:(NSAttributedString *)argAttributedString;
+
 @end

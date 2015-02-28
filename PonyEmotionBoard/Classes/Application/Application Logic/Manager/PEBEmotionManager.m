@@ -8,8 +8,12 @@
 
 #import "PEBEmotionManager.h"
 #import "PEBEmojiEmotionManager.h"
+#import "PEBPacket.h"
+#import "PEBElement.h"
 
 @interface PEBEmotionManager ()
+
+@property (nonatomic, copy) NSDictionary *emojiSimilarDictionary;
 
 @property (nonatomic, copy) NSString *storeFilePath;
 
@@ -24,6 +28,7 @@
     self = [super init];
     if (self) {
         [self readPacketFromStore];
+        [self emojiSimilarDictionary];
     }
     return self;
 }
@@ -34,12 +39,73 @@
     }
 }
 
+#pragma mark - Emoji Similar
+
+- (NSDictionary *)emojiSimilarDictionary {
+    if (_emojiSimilarDictionary == nil) {
+        NSMutableDictionary *emojiSimilarDictionary = [NSMutableDictionary dictionary];
+        [self.packetArray enumerateObjectsUsingBlock:^(PEBPacket *obj, NSUInteger idx, BOOL *stop) {
+            [obj.elements enumerateObjectsUsingBlock:^(PEBElement *obj, NSUInteger idx, BOOL *stop) {
+                if (obj.type == PEBElementTypeEmojiSimilar) {
+                    [emojiSimilarDictionary setObject:obj forKey:obj.titleString];
+                }
+            }];
+        }];
+        _emojiSimilarDictionary = [emojiSimilarDictionary copy];
+    }
+    return _emojiSimilarDictionary;
+}
+
+- (NSAttributedString *)addEmotionsToAttributedString:(NSAttributedString *)attributedString {
+    static NSRegularExpression *regularExpression;
+    {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            regularExpression = [NSRegularExpression regularExpressionWithPattern:@"\\u005B.*?]"
+                                                                          options:kNilOptions
+                                                                            error:nil];
+        });
+    }
+    NSMutableAttributedString *mutableAttributedString = [attributedString mutableCopy];
+    NSString *textString = [mutableAttributedString string];
+    NSArray *textMatches = [regularExpression matchesInString:textString
+                                                      options:NSMatchingReportCompletion
+                                                        range:NSMakeRange(0, [textString length])];
+    [textMatches
+     enumerateObjectsWithOptions:NSEnumerationReverse
+     usingBlock:^(NSTextCheckingResult *obj, NSUInteger idx, BOOL *stop) {
+         NSString *emotionString = [textString substringWithRange:obj.range];
+         NSString *emotionKey = [emotionString stringByReplacingOccurrencesOfString:@"[" withString:@""];
+         emotionKey = [emotionKey stringByReplacingOccurrencesOfString:@"]" withString:@""];
+         NSAttributedString *emotionAttributedString = [self emotionAttributedStringForKey:emotionKey];
+         [mutableAttributedString replaceCharactersInRange:obj.range withAttributedString:emotionAttributedString];
+    }];
+    return [mutableAttributedString copy];
+}
+
+- (NSAttributedString *)emotionAttributedStringForKey:(NSString *)aKey {
+    if (self.emojiSimilarDictionary[aKey] != nil) {
+        PEBElement *emojiSimilarElement = self.emojiSimilarDictionary[aKey];
+        UIImage *emojiImage;
+        if (emojiSimilarElement.localURLString != nil) {
+            emojiImage = [UIImage imageNamed:emojiSimilarElement.localURLString];
+        }
+        if (emojiImage != nil) {
+            NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+            attachment.image = emojiImage;
+            NSAttributedString *attributedString = [NSAttributedString attributedStringWithAttachment:attachment];
+            return attributedString;
+        }
+    }
+    return nil;
+}
+
+#pragma mark - PacketStore
+
 - (void)setPacketArray:(NSArray *)packetArray {
     _packetArray = packetArray;
     [self savePacketInStore];
 }
-
-#pragma mark - PacketStore
 
 /**
  *  当前使用Plist文件保存表情元数据
