@@ -9,6 +9,8 @@
 #import "PEBEmotionItemPresenter.h"
 #import "PEBEmotionItemCollectionViewCell.h"
 #import "PEBEmotionItemInteractor.h"
+#import "UITextView+PEBCursor.h"
+#import "UITextField+PEBCursor.h"
 
 @implementation PEBEmotionItemPresenter
 
@@ -26,7 +28,17 @@
 - (void)insertTextToTextField:(UITextField *)textField {
     if (self.itemInteractor.emotionText != nil) {
         NSString *text = [textField text];
-        [textField setText:[text stringByAppendingString:self.itemInteractor.emotionText]];
+        NSInteger insertPosition = [textField peb_cursorPosition];
+        if (insertPosition <= text.length) {
+            NSMutableString *mutableText = [text mutableCopy];
+            [mutableText insertString:self.itemInteractor.emotionText
+                              atIndex:insertPosition];
+            textField.text = [mutableText copy];
+        }
+        else {
+            text = [text stringByAppendingString:self.itemInteractor.emotionText];
+            textField.text = text;
+        }
     }
     else if(self.itemInteractor.emotionURLString != nil) {
         

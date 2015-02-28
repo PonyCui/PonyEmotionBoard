@@ -11,6 +11,8 @@
 #import "PEBKeyboardPresenter.h"
 #import "PEBKeyboardInteractor.h"
 #import "PEBKeyboardDelegateObject.h"
+#import "UITextField+PEBCursor.h"
+#import "UITextView+PEBCursor.h"
 
 @interface PEBKeyboardViewController ()
 
@@ -57,10 +59,24 @@
     [self.view layoutIfNeeded];
 }
 
+#pragma mark - cursorPosition
+
+- (void)updateCursorPosition {
+    UITextPosition *beginning = self.textField.beginningOfDocument;
+    UITextRange *selectedRange = self.textField.selectedTextRange;
+    UITextPosition *selectionStart = selectedRange.start;
+    const NSInteger location = [self.textField offsetFromPosition:beginning
+                                                       toPosition:selectionStart];
+    [self.textField peb_setCursorPosition:location];
+}
+
 #pragma mark - isPresented
 
 - (void)setIsPresenting:(BOOL)isPresented {
     _isPresenting = isPresented;
+    if (isPresented) {
+        [self updateCursorPosition];
+    }
     isPresented ?
     [self performSelector:@selector(present) withObject:nil afterDelay:0.001] :
     [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.001];

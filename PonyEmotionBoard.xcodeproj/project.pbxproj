@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6364A5BA1A9EC68800409722 /* PEBKeyboardDelegateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364A5B91A9EC68800409722 /* PEBKeyboardDelegateObject.m */; };
+		638F60C11AA1A0C900B9B635 /* UITextField+PEBCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 638F60C01AA1A0C900B9B635 /* UITextField+PEBCursor.m */; };
+		638F60C41AA1A0D200B9B635 /* UITextView+PEBCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 638F60C31AA1A0D200B9B635 /* UITextView+PEBCursor.m */; };
 		63C19A361AA0642D00ACE468 /* PEBPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C19A351AA0642D00ACE468 /* PEBPacket.m */; };
 		63C19A391AA0647900ACE468 /* PEBElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C19A381AA0647900ACE468 /* PEBElement.m */; };
 		63C19A3C1AA0721600ACE468 /* PEBEmotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C19A3B1AA0721600ACE468 /* PEBEmotionManager.m */; };
@@ -52,6 +54,10 @@
 /* Begin PBXFileReference section */
 		6364A5B81A9EC68800409722 /* PEBKeyboardDelegateObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBKeyboardDelegateObject.h; sourceTree = "<group>"; };
 		6364A5B91A9EC68800409722 /* PEBKeyboardDelegateObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBKeyboardDelegateObject.m; sourceTree = "<group>"; };
+		638F60BF1AA1A0C900B9B635 /* UITextField+PEBCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+PEBCursor.h"; sourceTree = "<group>"; };
+		638F60C01AA1A0C900B9B635 /* UITextField+PEBCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+PEBCursor.m"; sourceTree = "<group>"; };
+		638F60C21AA1A0D200B9B635 /* UITextView+PEBCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+PEBCursor.h"; sourceTree = "<group>"; };
+		638F60C31AA1A0D200B9B635 /* UITextView+PEBCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+PEBCursor.m"; sourceTree = "<group>"; };
 		63C19A341AA0642D00ACE468 /* PEBPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBPacket.h; sourceTree = "<group>"; };
 		63C19A351AA0642D00ACE468 /* PEBPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEBPacket.m; sourceTree = "<group>"; };
 		63C19A371AA0647900ACE468 /* PEBElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEBElement.h; sourceTree = "<group>"; };
@@ -355,6 +361,10 @@
 			children = (
 				F0EDFBF21A9AC598005FCB07 /* PEBApplication+PEBCore.h */,
 				F0EDFBF31A9AC598005FCB07 /* PEBApplication+PEBCore.m */,
+				638F60BF1AA1A0C900B9B635 /* UITextField+PEBCursor.h */,
+				638F60C01AA1A0C900B9B635 /* UITextField+PEBCursor.m */,
+				638F60C21AA1A0D200B9B635 /* UITextView+PEBCursor.h */,
+				638F60C31AA1A0D200B9B635 /* UITextView+PEBCursor.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -499,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63C19A361AA0642D00ACE468 /* PEBPacket.m in Sources */,
+				638F60C11AA1A0C900B9B635 /* UITextField+PEBCursor.m in Sources */,
 				F0EDFC0F1A9D770F005FCB07 /* PEBEmotionItemPresenter.m in Sources */,
 				F0EDFBB91A9ABD4D005FCB07 /* ViewController.m in Sources */,
 				F0EDFBF41A9AC598005FCB07 /* PEBApplication+PEBCore.m in Sources */,
@@ -520,6 +531,7 @@
 				F0EDFBE41A9AC35B005FCB07 /* PEBDefines.m in Sources */,
 				F0EDFC061A9C26EA005FCB07 /* PEBEmotionGroupCollectionViewCell.m in Sources */,
 				F0EDFBE11A9AC345005FCB07 /* PEBCore.m in Sources */,
+				638F60C41AA1A0D200B9B635 /* UITextView+PEBCursor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,8 +35,8 @@
 }
 
 - (IBAction)handleEmotionButtonTapped:(id)sender {
-    [self.textField resignFirstResponder];
     [self.keyboardViewController setIsPresenting:YES];
+    [self.textField resignFirstResponder];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -56,6 +56,10 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     [self.keyboardViewController setIsPresenting:NO];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
 }
 
 @end
