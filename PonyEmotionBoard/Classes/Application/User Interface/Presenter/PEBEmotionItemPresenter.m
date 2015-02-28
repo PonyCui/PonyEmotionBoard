@@ -39,6 +39,7 @@
             text = [text stringByAppendingString:self.itemInteractor.emotionText];
             textField.text = text;
         }
+        [textField peb_setCursorPosition:[textField peb_cursorPosition] + self.itemInteractor.emotionText.length];
     }
     else if(self.itemInteractor.emotionURLString != nil) {
         
