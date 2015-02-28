@@ -77,13 +77,15 @@
          NSString *emotionString = [textString substringWithRange:obj.range];
          NSString *emotionKey = [emotionString stringByReplacingOccurrencesOfString:@"[" withString:@""];
          emotionKey = [emotionKey stringByReplacingOccurrencesOfString:@"]" withString:@""];
-         NSAttributedString *emotionAttributedString = [self emotionAttributedStringForKey:emotionKey];
+         NSAttributedString *emotionAttributedString = [self emotionAttributedStringForKey:emotionKey
+                                                                 referenceAttributedString:[mutableAttributedString attributedSubstringFromRange:obj.range]];
          [mutableAttributedString replaceCharactersInRange:obj.range withAttributedString:emotionAttributedString];
     }];
     return [mutableAttributedString copy];
 }
 
-- (NSAttributedString *)emotionAttributedStringForKey:(NSString *)aKey {
+- (NSAttributedString *)emotionAttributedStringForKey:(NSString *)aKey
+                            referenceAttributedString:(NSAttributedString *)referenceAttributedString {
     if (self.emojiSimilarDictionary[aKey] != nil) {
         PEBElement *emojiSimilarElement = self.emojiSimilarDictionary[aKey];
         UIImage *emojiImage;
@@ -92,7 +94,17 @@
         }
         if (emojiImage != nil) {
             NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+            UIFont *referenceFont = [referenceAttributedString attribute:NSFontAttributeName
+                                                                 atIndex:0
+                                                          effectiveRange:nil];
+            if (referenceFont == nil) {
+                referenceFont = [UIFont systemFontOfSize:17.0];
+            }
             attachment.image = emojiImage;
+            attachment.bounds = CGRectMake(0,
+                                           referenceFont.descender,
+                                           referenceFont.lineHeight,
+                                           referenceFont.lineHeight);
             NSAttributedString *attributedString = [NSAttributedString attributedStringWithAttachment:attachment];
             return attributedString;
         }

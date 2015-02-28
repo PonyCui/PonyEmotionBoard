@@ -41,8 +41,15 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     self.outputLabel.text = self.textField.text;
+    NSAttributedString *biggerText = [[NSAttributedString alloc]
+                                      initWithString:self.textField.text
+                                      attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:21.0]}];
     self.outputLabel.attributedText = [[PEBApplication sharedInstance]
-                                       emotionAttributedStringWithString:self.textField.text];
+                                       emotionAttributedStringWithAttributedString:biggerText];
+//Try this
+//    self.outputLabel.attributedText = [[PEBApplication sharedInstance]
+//                                       emotionAttributedStringWithString:self.textField.text
+//                                       referenceFont:self.textField.font];
     self.textField.text = @"";
     return YES;
 }

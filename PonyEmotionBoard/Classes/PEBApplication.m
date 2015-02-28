@@ -47,8 +47,10 @@
     return [self.core.wireframe presentEmotionBoardToViewController:viewController withTextField:textField];
 }
 
-- (NSAttributedString *)emotionAttributedStringWithString:(NSString *)argString {
-    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:argString];
+- (NSAttributedString *)emotionAttributedStringWithString:(NSString *)argString
+                                            referenceFont:(UIFont *)referenceFont{
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:argString
+                                                                           attributes:@{NSFontAttributeName: referenceFont}];
     return [self emotionAttributedStringWithAttributedString:attributedString];
 }
 
