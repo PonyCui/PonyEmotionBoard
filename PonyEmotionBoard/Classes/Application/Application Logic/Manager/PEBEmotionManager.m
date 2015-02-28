@@ -80,7 +80,7 @@
          NSAttributedString *emotionAttributedString = [self emotionAttributedStringForKey:emotionKey
                                                                  referenceAttributedString:[mutableAttributedString attributedSubstringFromRange:obj.range]];
          [mutableAttributedString replaceCharactersInRange:obj.range withAttributedString:emotionAttributedString];
-    }];
+     }];
     return [mutableAttributedString copy];
 }
 
@@ -97,15 +97,19 @@
             UIFont *referenceFont = [referenceAttributedString attribute:NSFontAttributeName
                                                                  atIndex:0
                                                           effectiveRange:nil];
+            NSParagraphStyle *referenceParagraphStyle = [referenceAttributedString
+                                                         attribute:NSParagraphStyleAttributeName
+                                                         atIndex:0
+                                                         effectiveRange:nil];
             if (referenceFont == nil) {
                 referenceFont = [UIFont systemFontOfSize:17.0];
             }
             attachment.image = emojiImage;
-            CGFloat lineHeightOffset = referenceFont.lineHeight * 0.1;
+            CGFloat lineHeight = referenceParagraphStyle != nil ? referenceParagraphStyle.minimumLineHeight : referenceFont.lineHeight;
             attachment.bounds = CGRectMake(0,
-                                           referenceFont.descender - lineHeightOffset,
-                                           referenceFont.lineHeight * 1.2,
-                                           referenceFont.lineHeight * 1.2);
+                                           referenceFont.descender - floor((lineHeight - referenceFont.lineHeight) / 2),
+                                           lineHeight,
+                                           lineHeight);
             NSAttributedString *attributedString = [NSAttributedString attributedStringWithAttachment:attachment];
             return attributedString;
         }
