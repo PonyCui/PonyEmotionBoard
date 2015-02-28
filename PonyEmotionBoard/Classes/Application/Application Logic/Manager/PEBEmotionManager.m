@@ -101,10 +101,11 @@
                 referenceFont = [UIFont systemFontOfSize:17.0];
             }
             attachment.image = emojiImage;
+            CGFloat lineHeightOffset = referenceFont.lineHeight * 0.1;
             attachment.bounds = CGRectMake(0,
-                                           referenceFont.descender,
-                                           referenceFont.lineHeight,
-                                           referenceFont.lineHeight);
+                                           referenceFont.descender - lineHeightOffset,
+                                           referenceFont.lineHeight * 1.2,
+                                           referenceFont.lineHeight * 1.2);
             NSAttributedString *attributedString = [NSAttributedString attributedStringWithAttachment:attachment];
             return attributedString;
         }

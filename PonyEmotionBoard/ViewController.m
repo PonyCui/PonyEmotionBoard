@@ -43,7 +43,7 @@
     self.outputLabel.text = self.textField.text;
     NSAttributedString *biggerText = [[NSAttributedString alloc]
                                       initWithString:self.textField.text
-                                      attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:21.0]}];
+                                      attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14.0]}];
     self.outputLabel.attributedText = [[PEBApplication sharedInstance]
                                        emotionAttributedStringWithAttributedString:biggerText];
 //Try this
