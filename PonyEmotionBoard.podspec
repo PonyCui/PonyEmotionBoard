@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
 
   s.source_files  = "PonyEmotionBoard/Classes","PonyEmotionBoard/Classes/**","PonyEmotionBoard/Classes/**/**","PonyEmotionBoard/Classes/**/**/**"
 
-  s.resources = "PonyEmotionBoard/Resources/*.xcassets", "PonyEmotionBoard/Resources/*.storyboard"
+  s.resources = "PonyEmotionBoard/Resources/*.xcassets", "PonyEmotionBoard/Resources/*.storyboard", "PonyEmotionBoard/Resources/*.plist"
 
   s.requires_arc = true
 
