@@ -69,6 +69,9 @@
     if (self.element.type == PEBElementTypeAnimate) {
         return self.element.titleString;
     }
+    else if (self.element.type == PEBElementTypeEmoji) {
+        return self.element.titleString;
+    }
     else {
         return nil;
     }

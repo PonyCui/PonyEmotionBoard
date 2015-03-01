@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -124,16 +124,27 @@
                                                         <constraint firstAttribute="height" constant="30" id="zWO-Nf-xKd"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejx-ia-kpy">
+                                                    <rect key="frame" x="3" y="0.0" width="30" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="ejx-ia-kpy" firstAttribute="height" secondItem="W4h-xl-jxk" secondAttribute="height" id="Fb1-8h-HlI"/>
                                             <constraint firstItem="W4h-xl-jxk" firstAttribute="top" secondItem="QMH-sq-lIo" secondAttribute="top" id="KHH-S8-c4q"/>
                                             <constraint firstAttribute="centerX" secondItem="W4h-xl-jxk" secondAttribute="centerX" id="Yyr-ac-uKm"/>
+                                            <constraint firstItem="ejx-ia-kpy" firstAttribute="centerX" secondItem="W4h-xl-jxk" secondAttribute="centerX" id="ZHp-cX-utL"/>
+                                            <constraint firstItem="ejx-ia-kpy" firstAttribute="centerY" secondItem="W4h-xl-jxk" secondAttribute="centerY" id="dMn-ht-wQ2"/>
+                                            <constraint firstItem="ejx-ia-kpy" firstAttribute="width" secondItem="W4h-xl-jxk" secondAttribute="width" id="xEK-ya-Dx9"/>
                                         </constraints>
                                         <size key="customSize" width="36" height="36"/>
                                         <connections>
                                             <outlet property="iconImageView" destination="W4h-xl-jxk" id="kGs-Hh-nIJ"/>
+                                            <outlet property="iconTitleLabel" destination="ejx-ia-kpy" id="hbq-XC-U9I"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomItemCell" id="g91-FA-IkJ" customClass="PEBEmotionItemCollectionViewCell">
