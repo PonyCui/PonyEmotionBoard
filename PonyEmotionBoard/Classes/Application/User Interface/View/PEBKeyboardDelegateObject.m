@@ -326,7 +326,7 @@
     }
     self.pageControl.numberOfPages = numberOfPages;
     self.pageControl.currentPage = currentPage;
-    self.pageControl.hidden = numberOfPages == 0;
+    self.pageControl.hidden = numberOfPages <= 1;
 }
 
 - (void)updateGroupSelection {
