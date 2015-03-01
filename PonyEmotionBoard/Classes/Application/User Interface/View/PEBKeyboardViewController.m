@@ -38,6 +38,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Layouts
+
 - (void)configureViewLayouts {
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
     NSDictionary *views = @{@"view": self.view};
@@ -57,6 +59,11 @@
         [self.view.superview addConstraints:constraints];
     }
     [self.view layoutIfNeeded];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    [self.keyboardDelegates updateView];
 }
 
 #pragma mark - cursorPosition
