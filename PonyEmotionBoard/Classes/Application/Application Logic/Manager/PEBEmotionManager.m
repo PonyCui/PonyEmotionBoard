@@ -10,6 +10,7 @@
 #import "PEBEmojiEmotionManager.h"
 #import "PEBPacket.h"
 #import "PEBElement.h"
+#import "PEBDefines.h"
 
 @interface PEBEmotionManager ()
 
@@ -129,13 +130,23 @@
  *  如果有需要，你可以升级至CoreData
  */
 - (void)savePacketInStore {
-    [self.packetArray writeToFile:self.storeFilePath atomically:YES];
+    [NSKeyedArchiver archiveRootObject:self.packetArray toFile:self.storeFilePath];
 }
 
 - (void)readPacketFromStore {
-    self.packetArray = [NSArray arrayWithContentsOfFile:self.storeFilePath];
+    self.packetArray= [NSKeyedUnarchiver unarchiveObjectWithFile:self.storeFilePath];
     if (self.packetArray == nil) {
         self.packetArray = @[[PEBEmojiEmotionManager emojiPacket]];
+    }
+    else {
+        NSUInteger lockHash = [[[NSUserDefaults standardUserDefaults] valueForKey:kPEBEmojiPacketVersionLock] unsignedIntegerValue];
+        if (lockHash != [PEBEmojiEmotionManager hash]) {
+            NSMutableArray *packetArray = [self.packetArray mutableCopy];
+            if ([packetArray count] >= 1) {
+                [packetArray setObject:[PEBEmojiEmotionManager emojiPacket] atIndexedSubscript:0];
+            }
+            self.packetArray = packetArray;
+        }
     }
 }
 

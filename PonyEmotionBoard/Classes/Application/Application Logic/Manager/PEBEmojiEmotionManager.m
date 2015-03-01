@@ -29,4 +29,10 @@
     return [NSDictionary dictionaryWithContentsOfFile:emojiDataFilePath];
 }
 
++ (NSUInteger)hash {
+    NSString *emojiDataFilePath = [[NSBundle mainBundle] pathForResource:@"PEBEmojiPacket" ofType:@"plist"];
+    NSData *packetData = [NSData dataWithContentsOfFile:emojiDataFilePath];
+    return [packetData hash];
+}
+
 @end

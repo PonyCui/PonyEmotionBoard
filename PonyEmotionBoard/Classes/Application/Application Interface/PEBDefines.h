@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define kPEBEmojiPacketVersionLock @"kPEBEmojiPacketVersionLock"
+
 @interface PEBDefines : NSObject
 
 @end

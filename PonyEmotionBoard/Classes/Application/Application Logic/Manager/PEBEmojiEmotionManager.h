@@ -17,4 +17,6 @@
 
 + (PEBPacket *)emojiPacket;
 
++ (NSUInteger)hash;
+
 @end
