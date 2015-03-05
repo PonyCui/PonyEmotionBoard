@@ -84,14 +84,15 @@
     if (isPresented) {
         [self updateCursorPosition];
     }
-    isPresented ?
-    [self performSelector:@selector(present) withObject:nil afterDelay:0.001] :
-    [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.001];
+    isPresented ? [self present] : [self dismiss];
 }
 
 - (void)present {
     self.viewBottomSpaceConstraint.constant = 0.0;
     [UIView animateWithDuration:0.25 animations:^{
+        [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        self.viewBottomSpaceConstraint.constant = 0.0;
         [self.view layoutIfNeeded];
     }];
 }
@@ -99,6 +100,9 @@
 - (void)dismiss {
     self.viewBottomSpaceConstraint.constant = -216.0;
     [UIView animateWithDuration:0.25 animations:^{
+        [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        self.viewBottomSpaceConstraint.constant = -216.0;
         [self.view layoutIfNeeded];
     }];
 }
